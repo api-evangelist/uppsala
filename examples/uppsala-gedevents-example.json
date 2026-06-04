@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://ucdpapi.pcr.uu.se/api/gedevents/25.1?pagesize=1&page=0",
+    "headers": {
+      "x-ucdp-access-token": "<your-token>"
+    }
+  },
+  "response": {
+    "TotalCount": 387426,
+    "TotalPages": 387426,
+    "PreviousPageUrl": "",
+    "NextPageUrl": "https://ucdpapi.pcr.uu.se/api/gedevents/25.1?pagesize=1&page=1",
+    "Result": [
+      {
+        "id": 1,
+        "relid": "ETH-2010-1-1041-1",
+        "year": 2010,
+        "active_year": true,
+        "code_status": "Clear",
+        "type_of_violence": 1,
+        "conflict_dset_id": "333",
+        "conflict_new_id": 333,
+        "conflict_name": "Ethiopia: Ogaden",
+        "dyad_dset_id": "406",
+        "dyad_new_id": 406,
+        "dyad_name": "Government of Ethiopia - ONLF",
+        "side_a_dset_id": "116",
+        "side_a_new_id": 116,
+        "side_a": "Government of Ethiopia",
+        "side_b_dset_id": "291",
+        "side_b_new_id": 291,
+        "side_b": "ONLF",
+        "number_of_sources": 1,
+        "source_article": "Agence France-Presse",
+        "source_office": "AFP",
+        "source_date": "2010-05-13",
+        "source_headline": "Clashes reported in eastern Ethiopia",
+        "source_original": "",
+        "where_prec": 1,
+        "where_coordinates": "Degehabur",
+        "where_description": "Degehabur town",
+        "adm_1": "Somali region",
+        "adm_2": "Degehabur zone",
+        "latitude": 8.21972,
+        "longitude": 43.56750,
+        "geom_wkt": "POINT (43.56750 8.21972)",
+        "priogrid_gid": 143263,
+        "country": "Ethiopia",
+        "country_id": 530,
+        "region": "Africa",
+        "event_clarity": 1,
+        "date_prec": 1,
+        "date_start": "2010-05-13T00:00:00",
+        "date_end": "2010-05-13T00:00:00",
+        "deaths_a": 0,
+        "deaths_b": 3,
+        "deaths_civilians": 0,
+        "deaths_unknown": 0,
+        "best": 3,
+        "high": 5,
+        "low": 3,
+        "gwnoa": "530",
+        "gwnob": null
+      }
+    ]
+  }
+}

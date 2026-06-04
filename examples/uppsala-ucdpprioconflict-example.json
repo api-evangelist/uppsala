@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://ucdpapi.pcr.uu.se/api/UcdpPrioConflict/25.1?pagesize=1&page=0",
+    "headers": {
+      "x-ucdp-access-token": "<your-token>"
+    }
+  },
+  "response": {
+    "TotalCount": 2632,
+    "TotalPages": 2632,
+    "PreviousPageUrl": "",
+    "NextPageUrl": "https://ucdpapi.pcr.uu.se/api/UcdpPrioConflict/25.1?pagesize=1&page=1",
+    "Result": [
+      {
+        "conflict_id": "333",
+        "location": "Ethiopia",
+        "side_a": "Government of Ethiopia",
+        "side_a_Id": "116",
+        "side_a_2nd": "",
+        "side_b": "ONLF",
+        "side_b_Id": "291",
+        "side_b_2nd": "",
+        "incompatibility": "1",
+        "territory_name": "Ogaden",
+        "year": "2010",
+        "intensity_level": "1",
+        "cumulative_intensity": "1",
+        "type_of_conflict": "3",
+        "start_date": "1994-03-16",
+        "start_prec": "1",
+        "start_date2": "1994-03-16",
+        "start_prec2": "1",
+        "ep_end": "0",
+        "ep_end_date": "",
+        "ep_end_prec": "",
+        "gwno_a": "530",
+        "gwno_a_2nd": "",
+        "gwno_b": "",
+        "gwno_b_2nd": "",
+        "gwno_loc": "530",
+        "region": "4",
+        "version": "25.1"
+      }
+    ]
+  }
+}

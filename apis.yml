@@ -44,6 +44,20 @@ apis:
         url: https://ucdp.uu.se/apidocs/
       - type: Authentication
         url: https://ucdp.uu.se/apidocs/
+      - type: OpenAPI
+        url: openapi/uppsala-ucdp.yaml
+      - type: JSONSchema
+        url: json-schema/uppsala-gedevent-schema.json
+      - type: JSONStructure
+        url: json-structure/uppsala-gedevent-structure.json
+      - type: Example
+        url: examples/uppsala-gedevents-example.json
+      - type: Rules
+        url: rules/uppsala-rules.yml
+      - type: Vocabulary
+        url: vocabulary/uppsala-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/uppsala-context.jsonld
   - aid: uppsala:norseworld
     name: Norse World REST-API
     description: >-

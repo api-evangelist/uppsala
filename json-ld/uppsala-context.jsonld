@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ucdp": "https://ucdp.uu.se/vocab#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "@vocab": "https://ucdp.uu.se/vocab#",
+
+    "University": "schema:CollegeOrUniversity",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "founder": "schema:foundingDate",
+
+    "GedEvent": "ucdp:GeoreferencedEvent",
+    "Conflict": "ucdp:ArmedConflict",
+    "Dyad": "ucdp:Dyad",
+
+    "id": "schema:identifier",
+    "relid": "ucdp:relationId",
+    "year": "dcterms:date",
+    "conflict_id": "ucdp:conflictId",
+    "conflict_name": "ucdp:conflictName",
+    "dyad_id": "ucdp:dyadId",
+    "dyad_name": "ucdp:dyadName",
+    "type_of_violence": "ucdp:typeOfViolence",
+    "side_a": "ucdp:sideA",
+    "side_b": "ucdp:sideB",
+    "incompatibility": "ucdp:incompatibility",
+    "intensity_level": "ucdp:intensityLevel",
+    "country": {
+      "@id": "schema:addressCountry"
+    },
+    "country_id": "ucdp:gwCountryCode",
+    "region": "ucdp:region",
+    "latitude": "geo:lat",
+    "longitude": "geo:long",
+    "where_coordinates": "ucdp:whereCoordinates",
+    "date_start": {
+      "@id": "schema:startDate",
+      "@type": "schema:Date"
+    },
+    "date_end": {
+      "@id": "schema:endDate",
+      "@type": "schema:Date"
+    },
+    "best": "ucdp:bestFatalityEstimate",
+    "low": "ucdp:lowFatalityEstimate",
+    "high": "ucdp:highFatalityEstimate",
+    "source_article": "schema:citation",
+    "source_headline": "schema:headline",
+    "version": "schema:version"
+  },
+  "@type": "University",
+  "name": "Uppsala University",
+  "url": "https://www.uu.se/",
+  "description": "Provider of the Uppsala Conflict Data Program (UCDP) Public API for conflict and organized violence data."
+}

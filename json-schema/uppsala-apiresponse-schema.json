@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uppsala/main/json-schema/uppsala-apiresponse-schema.json",
+  "title": "UcdpApiResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "TotalCount": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "TotalPages": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "PreviousPageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "NextPageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Result": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

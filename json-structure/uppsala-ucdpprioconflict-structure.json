@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uppsala/main/json-structure/uppsala-ucdpprioconflict-structure.json",
+  "name": "UcdpPrioConflictDb",
+  "type": "object",
+  "properties": {
+    "conflict_id": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "side_a": {
+      "type": "string"
+    },
+    "side_a_Id": {
+      "type": "string"
+    },
+    "side_a_2nd": {
+      "type": "string"
+    },
+    "side_b": {
+      "type": "string"
+    },
+    "side_b_Id": {
+      "type": "string"
+    },
+    "side_b_2nd": {
+      "type": "string"
+    },
+    "incompatibility": {
+      "type": "string"
+    },
+    "territory_name": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "intensity_level": {
+      "type": "string"
+    },
+    "cumulative_intensity": {
+      "type": "string"
+    },
+    "type_of_conflict": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string"
+    },
+    "start_prec": {
+      "type": "string"
+    },
+    "start_date2": {
+      "type": "string"
+    },
+    "start_prec2": {
+      "type": "string"
+    },
+    "ep_end": {
+      "type": "string"
+    },
+    "ep_end_date": {
+      "type": "string"
+    },
+    "ep_end_prec": {
+      "type": "string"
+    },
+    "gwno_a": {
+      "type": "string"
+    },
+    "gwno_a_2nd": {
+      "type": "string"
+    },
+    "gwno_b": {
+      "type": "string"
+    },
+    "gwno_b_2nd": {
+      "type": "string"
+    },
+    "gwno_loc": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

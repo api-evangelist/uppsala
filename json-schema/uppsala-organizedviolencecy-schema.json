@@ -1,0 +1,513 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrganizedViolenceCYDb",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "country": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "country_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "govt_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_exist": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_dyad_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_dyad_ids": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_dyad_names": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_deaths_parties": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_deaths_civilians": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_deaths_unknown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_total_deaths_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_total_deaths_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_total_deaths_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_exist": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_dyad_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_dyad_ids": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_intrastate_dyad_names": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_intrastate_govt_inv_incomp": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_deaths_parties": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_deaths_civilians": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_deaths_unknown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_deaths_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_deaths_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_intrastate_deaths_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_exist": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_dyad_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_dyad_ids": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_interstate_dyad_names": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sb_interstate_govt_inv_incomp": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_deaths_parties": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_deaths_civilians": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_deaths_unknown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_deaths_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_deaths_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "sb_interstate_deaths_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_exist": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_dyad_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_dyad_ids": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ns_dyad_names": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ns_deaths_parties": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_deaths_civilians": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_deaths_unknown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_total_deaths_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_total_deaths_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "ns_total_deaths_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_exist": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_dyad_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_dyad_ids": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "os_dyad_names": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "os_govt_inv": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_govt_killings_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_govt_killings_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_govt_killings_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_any_govt_inv": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_any_govt_killings_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_any_govt_killings_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_any_govt_killings_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_nsgroup_inv": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_nsgroup_killings_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_nsgroup_killings_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_nsgroup_killings_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_killings_unknown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_total_deaths_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_total_deaths_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "os_total_deaths_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "cumulative_total_deaths_parties_in_orgvio": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "cumulative_total_deaths_civilians_in_orgvio": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "cumulative_total_deaths_unknown_in_orgvio": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "cumulative_total_deaths_in_orgvio_best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "cumulative_total_deaths_in_orgvio_high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "cumulative_total_deaths_in_orgvio_low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "Version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uppsala/main/json-schema/uppsala-organizedviolencecy-schema.json"
+}

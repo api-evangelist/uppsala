@@ -1,0 +1,1466 @@
+openapi: 3.0.1
+info:
+  title: UCDP - The Public API
+  description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict
+    datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related
+    deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token
+    header (quota 5,000 requests/day).'
+  version: '1.0'
+  contact:
+    name: Uppsala Conflict Data Program
+    url: https://ucdp.uu.se/apidocs/
+paths:
+  /api/BattleDeaths/{version}:
+    get:
+      tags:
+      - BattleDeaths
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Conflict
+        in: query
+        schema:
+          type: string
+      - name: ConflictType
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: ConflictIncompatibility
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+  /api/Dyadic/{version}:
+    get:
+      tags:
+      - Dyadic
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Conflict
+        in: query
+        schema:
+          type: string
+      - name: ConflictType
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: ConflictIncompatibility
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DyadicDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DyadicDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DyadicDbAPIResponse'
+  /api/GEDEvents/{version}:
+    get:
+      tags:
+      - GEDEvents
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Id
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Geography
+        in: query
+        schema:
+          type: string
+      - name: StartDate
+        in: query
+        schema:
+          type: string
+      - name: EndDate
+        in: query
+        schema:
+          type: string
+      - name: TypeOfViolence
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Actor
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GedDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GedDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GedDbAPIResponse'
+  /api/NonState/{version}:
+    get:
+      tags:
+      - NonState
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Conflict
+        in: query
+        schema:
+          type: string
+      - name: Org
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/NonStateDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NonStateDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/NonStateDbAPIResponse'
+  /api/OneSided/{version}:
+    get:
+      tags:
+      - OneSided
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OneSidedDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OneSidedDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OneSidedDbAPIResponse'
+  /api/organizedviolencecy/{version}:
+    get:
+      tags:
+      - OrganizedViolenceCY
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Country_Id
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: Region
+        in: query
+        schema:
+          type: string
+      - name: Govt_name
+        in: query
+        schema:
+          type: string
+      - name: Sb_exist
+        in: query
+        schema:
+          type: string
+      - name: Sb_intrastate_exist
+        in: query
+        schema:
+          type: string
+      - name: Sb_interstate_exist
+        in: query
+        schema:
+          type: string
+      - name: Ns_exist
+        in: query
+        schema:
+          type: string
+      - name: Os_exist
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrganizedViolenceCYDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizedViolenceCYDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrganizedViolenceCYDbAPIResponse'
+  /api/UcdpPrioConflict/{version}:
+    get:
+      tags:
+      - UcdpPrioConflict
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Conflict
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: ConflictIncompatibility
+        in: query
+        schema:
+          type: string
+      - name: ConflictType
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UcdpPrioConflictDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UcdpPrioConflictDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UcdpPrioConflictDbAPIResponse'
+components:
+  schemas:
+    BattleDeathsDb:
+      type: object
+      properties:
+        conflict_id:
+          type: string
+          nullable: true
+        dyad_id:
+          type: string
+          nullable: true
+        location_inc:
+          type: string
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_a_id:
+          type: string
+          nullable: true
+        side_a_2nd:
+          type: string
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        side_b_Id:
+          type: string
+          nullable: true
+        side_b_2nd:
+          type: string
+          nullable: true
+        incompatibility:
+          type: string
+          nullable: true
+        territory_name:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        bd_best:
+          type: string
+          nullable: true
+        bd_low:
+          type: string
+          nullable: true
+        bd_high:
+          type: string
+          nullable: true
+        type_of_conflict:
+          type: string
+          nullable: true
+        battle_location:
+          type: string
+          nullable: true
+        gwno_a:
+          type: string
+          nullable: true
+        gwno_a_2nd:
+          type: string
+          nullable: true
+        gwno_b:
+          type: string
+          nullable: true
+        gwno_b_2nd:
+          type: string
+          nullable: true
+        gwno_loc:
+          type: string
+          nullable: true
+        gwno_battle:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BattleDeathsDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/BattleDeathsDb'
+          nullable: true
+      additionalProperties: false
+    DyadicDb:
+      type: object
+      properties:
+        dyad_id:
+          type: string
+          nullable: true
+        conflict_id:
+          type: string
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_a_id:
+          type: string
+          nullable: true
+        side_a_2nd:
+          type: string
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        side_b_id:
+          type: string
+          nullable: true
+        side_b_2nd:
+          type: string
+          nullable: true
+        incompatibility:
+          type: string
+          nullable: true
+        territory_name:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        intensity_level:
+          type: string
+          nullable: true
+        type_of_conflict:
+          type: string
+          nullable: true
+        start_date:
+          type: string
+          nullable: true
+        start_prec:
+          type: string
+          nullable: true
+        start_date2:
+          type: string
+          nullable: true
+        start_prec2:
+          type: string
+          nullable: true
+        gwno_a:
+          type: string
+          nullable: true
+        gwno_a_2nd:
+          type: string
+          nullable: true
+        gwno_b:
+          type: string
+          nullable: true
+        gwno_b_2nd:
+          type: string
+          nullable: true
+        gwno_loc:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    DyadicDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/DyadicDb'
+          nullable: true
+      additionalProperties: false
+    GedDb:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          nullable: true
+        relid:
+          type: string
+          nullable: true
+        year:
+          type: integer
+          format: int32
+          nullable: true
+        active_year:
+          type: boolean
+          nullable: true
+        code_status:
+          type: string
+          nullable: true
+        type_of_violence:
+          type: integer
+          format: int32
+          nullable: true
+        conflict_dset_id:
+          type: string
+          nullable: true
+        conflict_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        conflict_name:
+          type: string
+          nullable: true
+        dyad_dset_id:
+          type: string
+          nullable: true
+        dyad_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        dyad_name:
+          type: string
+          nullable: true
+        side_a_dset_id:
+          type: string
+          nullable: true
+        side_a_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_b_dset_id:
+          type: string
+          nullable: true
+        side_b_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        number_of_sources:
+          type: integer
+          format: int32
+          nullable: true
+        source_article:
+          type: string
+          nullable: true
+        source_office:
+          type: string
+          nullable: true
+        source_date:
+          type: string
+          nullable: true
+        source_headline:
+          type: string
+          nullable: true
+        source_original:
+          type: string
+          nullable: true
+        where_prec:
+          type: integer
+          format: int32
+          nullable: true
+        where_coordinates:
+          type: string
+          nullable: true
+        where_description:
+          type: string
+          nullable: true
+        adm_1:
+          type: string
+          nullable: true
+        adm_2:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+        geom_wkt:
+          type: string
+          nullable: true
+        priogrid_gid:
+          type: integer
+          format: int32
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        country_id:
+          type: integer
+          format: int32
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        event_clarity:
+          type: integer
+          format: int32
+          nullable: true
+        date_prec:
+          type: integer
+          format: int32
+          nullable: true
+        date_start:
+          type: string
+          format: date-time
+          nullable: true
+        date_end:
+          type: string
+          format: date-time
+          nullable: true
+        deaths_a:
+          type: integer
+          format: int32
+          nullable: true
+        deaths_b:
+          type: integer
+          format: int32
+          nullable: true
+        deaths_civilians:
+          type: integer
+          format: int32
+          nullable: true
+        deaths_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        best:
+          type: integer
+          format: int32
+          nullable: true
+        high:
+          type: integer
+          format: int32
+          nullable: true
+        low:
+          type: integer
+          format: int32
+          nullable: true
+        gwnoa:
+          type: string
+          nullable: true
+        gwnob:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GedDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/GedDb'
+          nullable: true
+      additionalProperties: false
+    NonStateDb:
+      type: object
+      properties:
+        conflict_id:
+          type: string
+          nullable: true
+        dyad_id:
+          type: string
+          nullable: true
+        org:
+          type: string
+          nullable: true
+        side_a_name:
+          type: string
+          nullable: true
+        side_a_name_fulltext:
+          type: string
+          nullable: true
+        side_a_name_mothertongue:
+          type: string
+          nullable: true
+        side_a_id:
+          type: string
+          nullable: true
+        side_a_components:
+          type: string
+          nullable: true
+        side_a_2nd:
+          type: string
+          nullable: true
+        gwno_a_2nd:
+          type: string
+          nullable: true
+        side_b_name:
+          type: string
+          nullable: true
+        side_b_name_fulltext:
+          type: string
+          nullable: true
+        side_b_name_mothertongue:
+          type: string
+          nullable: true
+        side_b_id:
+          type: string
+          nullable: true
+        side_b_components:
+          type: string
+          nullable: true
+        side_b_2nd:
+          type: string
+          nullable: true
+        gwno_b_2nd:
+          type: string
+          nullable: true
+        start_date:
+          type: string
+          nullable: true
+        start_prec:
+          type: string
+          nullable: true
+        start_date2:
+          type: string
+          nullable: true
+        start_prec2:
+          type: string
+          nullable: true
+        ep_end:
+          type: string
+          nullable: true
+        ep_end_date:
+          type: string
+          nullable: true
+        ep_end_prec:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        best_fatality_estimate:
+          type: string
+          nullable: true
+        low_fatality_estimate:
+          type: string
+          nullable: true
+        high_fatality_estimate:
+          type: string
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        gwno_location:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    NonStateDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/NonStateDb'
+          nullable: true
+      additionalProperties: false
+    OneSidedDb:
+      type: object
+      properties:
+        conflict_id:
+          type: string
+          nullable: true
+        dyad_id:
+          type: string
+          nullable: true
+        actor_id:
+          type: string
+          nullable: true
+        coalition_components:
+          type: string
+          nullable: true
+        actor_name:
+          type: string
+          nullable: true
+        actor_name_fulltext:
+          type: string
+          nullable: true
+        actor_name_mothertongue:
+          type: string
+          nullable: true
+        year:
+          type: integer
+          format: int32
+          nullable: true
+        best_fatality_estimate:
+          type: integer
+          format: int32
+          nullable: true
+        low_fatality_estimate:
+          type: integer
+          format: int32
+          nullable: true
+        high_fatality_estimate:
+          type: integer
+          format: int32
+          nullable: true
+        is_government_actor:
+          type: integer
+          format: int32
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        gwno_location:
+          type: string
+          nullable: true
+        gwnoa:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    OneSidedDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/OneSidedDb'
+          nullable: true
+      additionalProperties: false
+    OrganizedViolenceCYDb:
+      type: object
+      properties:
+        country:
+          type: string
+          nullable: true
+        country_id:
+          type: integer
+          format: int32
+          nullable: true
+        year:
+          type: integer
+          format: int32
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        govt_name:
+          type: string
+          nullable: true
+        sb_exist:
+          type: integer
+          format: int32
+          nullable: true
+        sb_dyad_count:
+          type: integer
+          format: int32
+          nullable: true
+        sb_dyad_ids:
+          type: string
+          nullable: true
+        sb_dyad_names:
+          type: string
+          nullable: true
+        sb_deaths_parties:
+          type: integer
+          format: int32
+          nullable: true
+        sb_deaths_civilians:
+          type: integer
+          format: int32
+          nullable: true
+        sb_deaths_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        sb_total_deaths_best:
+          type: integer
+          format: int32
+          nullable: true
+        sb_total_deaths_high:
+          type: integer
+          format: int32
+          nullable: true
+        sb_total_deaths_low:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_exist:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_dyad_count:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_dyad_ids:
+          type: string
+          nullable: true
+        sb_intrastate_dyad_names:
+          type: string
+          nullable: true
+        sb_intrastate_govt_inv_incomp:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_deaths_parties:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_deaths_civilians:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_deaths_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_deaths_best:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_deaths_high:
+          type: integer
+          format: int32
+          nullable: true
+        sb_intrastate_deaths_low:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_exist:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_dyad_count:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_dyad_ids:
+          type: string
+          nullable: true
+        sb_interstate_dyad_names:
+          type: string
+          nullable: true
+        sb_interstate_govt_inv_incomp:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_deaths_parties:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_deaths_civilians:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_deaths_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_deaths_best:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_deaths_high:
+          type: integer
+          format: int32
+          nullable: true
+        sb_interstate_deaths_low:
+          type: integer
+          format: int32
+          nullable: true
+        ns_exist:
+          type: integer
+          format: int32
+          nullable: true
+        ns_dyad_count:
+          type: integer
+          format: int32
+          nullable: true
+        ns_dyad_ids:
+          type: string
+          nullable: true
+        ns_dyad_names:
+          type: string
+          nullable: true
+        ns_deaths_parties:
+          type: integer
+          format: int32
+          nullable: true
+        ns_deaths_civilians:
+          type: integer
+          format: int32
+          nullable: true
+        ns_deaths_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        ns_total_deaths_best:
+          type: integer
+          format: int32
+          nullable: true
+        ns_total_deaths_high:
+          type: integer
+          format: int32
+          nullable: true
+        ns_total_deaths_low:
+          type: integer
+          format: int32
+          nullable: true
+        os_exist:
+          type: integer
+          format: int32
+          nullable: true
+        os_dyad_count:
+          type: integer
+          format: int32
+          nullable: true
+        os_dyad_ids:
+          type: string
+          nullable: true
+        os_dyad_names:
+          type: string
+          nullable: true
+        os_govt_inv:
+          type: integer
+          format: int32
+          nullable: true
+        os_govt_killings_best:
+          type: integer
+          format: int32
+          nullable: true
+        os_govt_killings_high:
+          type: integer
+          format: int32
+          nullable: true
+        os_govt_killings_low:
+          type: integer
+          format: int32
+          nullable: true
+        os_any_govt_inv:
+          type: integer
+          format: int32
+          nullable: true
+        os_any_govt_killings_best:
+          type: integer
+          format: int32
+          nullable: true
+        os_any_govt_killings_high:
+          type: integer
+          format: int32
+          nullable: true
+        os_any_govt_killings_low:
+          type: integer
+          format: int32
+          nullable: true
+        os_nsgroup_inv:
+          type: integer
+          format: int32
+          nullable: true
+        os_nsgroup_killings_best:
+          type: integer
+          format: int32
+          nullable: true
+        os_nsgroup_killings_high:
+          type: integer
+          format: int32
+          nullable: true
+        os_nsgroup_killings_low:
+          type: integer
+          format: int32
+          nullable: true
+        os_killings_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        os_total_deaths_best:
+          type: integer
+          format: int32
+          nullable: true
+        os_total_deaths_high:
+          type: integer
+          format: int32
+          nullable: true
+        os_total_deaths_low:
+          type: integer
+          format: int32
+          nullable: true
+        cumulative_total_deaths_parties_in_orgvio:
+          type: integer
+          format: int32
+          nullable: true
+        cumulative_total_deaths_civilians_in_orgvio:
+          type: integer
+          format: int32
+          nullable: true
+        cumulative_total_deaths_unknown_in_orgvio:
+          type: integer
+          format: int32
+          nullable: true
+        cumulative_total_deaths_in_orgvio_best:
+          type: integer
+          format: int32
+          nullable: true
+        cumulative_total_deaths_in_orgvio_high:
+          type: integer
+          format: int32
+          nullable: true
+        cumulative_total_deaths_in_orgvio_low:
+          type: integer
+          format: int32
+          nullable: true
+        Version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    OrganizedViolenceCYDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizedViolenceCYDb'
+          nullable: true
+      additionalProperties: false
+    UcdpPrioConflictDb:
+      type: object
+      properties:
+        conflict_id:
+          type: string
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_a_Id:
+          type: string
+          nullable: true
+        side_a_2nd:
+          type: string
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        side_b_Id:
+          type: string
+          nullable: true
+        side_b_2nd:
+          type: string
+          nullable: true
+        incompatibility:
+          type: string
+          nullable: true
+        territory_name:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        intensity_level:
+          type: string
+          nullable: true
+        cumulative_intensity:
+          type: string
+          nullable: true
+        type_of_conflict:
+          type: string
+          nullable: true
+        start_date:
+          type: string
+          nullable: true
+        start_prec:
+          type: string
+          nullable: true
+        start_date2:
+          type: string
+          nullable: true
+        start_prec2:
+          type: string
+          nullable: true
+        ep_end:
+          type: string
+          nullable: true
+        ep_end_date:
+          type: string
+          nullable: true
+        ep_end_prec:
+          type: string
+          nullable: true
+        gwno_a:
+          type: string
+          nullable: true
+        gwno_a_2nd:
+          type: string
+          nullable: true
+        gwno_b:
+          type: string
+          nullable: true
+        gwno_b_2nd:
+          type: string
+          nullable: true
+        gwno_loc:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UcdpPrioConflictDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/UcdpPrioConflictDb'
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    ApiToken:
+      type: apiKey
+      description: UCDP API token sent in x-ucdp-access-token header
+      name: x-ucdp-access-token
+      in: header
+security:
+- ApiToken: []
+servers:
+- url: https://ucdpapi.pcr.uu.se
+  description: UCDP Public API

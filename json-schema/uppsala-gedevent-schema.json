@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GedDb",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "relid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "active_year": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "code_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "type_of_violence": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "conflict_dset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conflict_new_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "conflict_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dyad_dset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dyad_new_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "dyad_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_a_dset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_a_new_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "side_a": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_b_dset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_b_new_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "side_b": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "number_of_sources": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "source_article": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_office": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_headline": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_original": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "where_prec": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "where_coordinates": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "where_description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "adm_1": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "adm_2": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "latitude": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "longitude": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double"
+    },
+    "geom_wkt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "priogrid_gid": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "country": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "country_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "event_clarity": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "date_prec": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "date_start": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "date_end": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "deaths_a": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "deaths_b": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "deaths_civilians": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "deaths_unknown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "best": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "high": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "low": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "gwnoa": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gwnob": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uppsala/main/json-schema/uppsala-gedevent-schema.json"
+}

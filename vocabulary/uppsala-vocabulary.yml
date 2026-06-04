@@ -1,0 +1,73 @@
+---
+vocabulary:
+  name: Uppsala UCDP Conflict Data Vocabulary
+  description: >-
+    Controlled vocabulary for the terms used across the Uppsala Conflict Data
+    Program (UCDP) Public API, derived from the real OpenAPI description of the
+    API. Terms reflect dataset objects and their key fields for georeferenced
+    events, armed conflict, dyadic, non-state, one-sided violence, battle-related
+    deaths, and organized violence country-year datasets.
+  version: '1.0'
+  terms:
+    - term: gedevent
+      definition: >-
+        A single UCDP Georeferenced Event Dataset (GED) record describing one
+        instance of organized violence at a specific place and time.
+      tags: [ dataset, event, georeferenced ]
+    - term: conflict_id
+      definition: Identifier of the conflict that an event or record belongs to.
+      tags: [ identifier, conflict ]
+    - term: dyad_id
+      definition: Identifier of the dyad (pair of opposing actors) in a conflict.
+      tags: [ identifier, dyad ]
+    - term: type_of_violence
+      definition: >-
+        Classification of violence (1 = state-based, 2 = non-state, 3 = one-sided).
+      tags: [ classification, violence ]
+    - term: side_a
+      definition: Primary party (typically a government) to a conflict or dyad.
+      tags: [ actor ]
+    - term: side_b
+      definition: Secondary party (often a non-state actor) to a conflict or dyad.
+      tags: [ actor ]
+    - term: best
+      definition: Best (most likely) estimate of fatalities for an event.
+      tags: [ fatalities, estimate ]
+    - term: low
+      definition: Low (conservative) estimate of fatalities for an event.
+      tags: [ fatalities, estimate ]
+    - term: high
+      definition: High (upper-bound) estimate of fatalities for an event.
+      tags: [ fatalities, estimate ]
+    - term: latitude
+      definition: Latitude coordinate of the geolocated event.
+      tags: [ geography, coordinate ]
+    - term: longitude
+      definition: Longitude coordinate of the geolocated event.
+      tags: [ geography, coordinate ]
+    - term: country_id
+      definition: Gleditsch-Ward numeric country code for the event location.
+      tags: [ identifier, geography ]
+    - term: region
+      definition: World region in which the event or conflict took place.
+      tags: [ geography ]
+    - term: incompatibility
+      definition: >-
+        The stated incompatibility of a conflict (e.g. territory or government).
+      tags: [ conflict, classification ]
+    - term: intensity_level
+      definition: >-
+        Annual intensity of an armed conflict (1 = minor, 2 = war) by battle deaths.
+      tags: [ conflict, classification ]
+    - term: best_fatality_estimate
+      definition: Best estimate of fatalities in non-state or one-sided datasets.
+      tags: [ fatalities, estimate ]
+    - term: TotalCount
+      definition: Total number of records matching a query across all pages.
+      tags: [ pagination, envelope ]
+    - term: NextPageUrl
+      definition: URL of the next page of results, or empty if none.
+      tags: [ pagination, envelope ]
+    - term: version
+      definition: Dataset release version (e.g. 25.1) for a record or request path.
+      tags: [ versioning, dataset ]

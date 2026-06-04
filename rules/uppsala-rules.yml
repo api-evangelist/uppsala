@@ -1,0 +1,65 @@
+---
+# Spectral ruleset encoding observed patterns in the UCDP Public API.
+# Patterns are derived from the real OpenAPI 3.0 description at
+# https://ucdpapi.pcr.uu.se/swagger/v1/swagger.json
+formats:
+  - oas3
+extends:
+  - spectral:oas
+rules:
+  ucdp-info-contact:
+    description: API info should include a contact pointing to the UCDP docs.
+    given: $.info
+    severity: warn
+    then:
+      field: contact
+      function: truthy
+
+  ucdp-server-defined:
+    description: A server URL must be defined (UCDP base is ucdpapi.pcr.uu.se).
+    given: $.servers
+    severity: error
+    then:
+      function: length
+      functionOptions:
+        min: 1
+
+  ucdp-version-path-param:
+    description: Dataset paths are versioned and require a required {version} path parameter.
+    given: $.paths[?(@property.match(/\/api\//))].get.parameters[?(@.name == 'version')]
+    severity: error
+    then:
+      field: required
+      function: truthy
+
+  ucdp-pagination-params:
+    description: Dataset operations should expose pagesize and page query parameters.
+    given: $.paths[?(@property.match(/\/api\//))].get
+    severity: warn
+    then:
+      field: parameters
+      function: truthy
+
+  ucdp-api-token-security:
+    description: A header API token security scheme (x-ucdp-access-token) must be declared.
+    given: $.components.securitySchemes
+    severity: error
+    then:
+      field: ApiToken
+      function: truthy
+
+  ucdp-response-envelope:
+    description: Successful responses should use a paginated envelope (TotalCount, Result).
+    given: $.components.schemas[?(@property.match(/APIResponse$/))].properties
+    severity: warn
+    then:
+      field: Result
+      function: truthy
+
+  ucdp-json-media-type:
+    description: Operations should advertise an application/json response.
+    given: $.paths[?(@property.match(/\/api\//))].get.responses.200.content
+    severity: warn
+    then:
+      field: application/json
+      function: truthy

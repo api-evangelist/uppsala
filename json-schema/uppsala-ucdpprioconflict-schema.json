@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UcdpPrioConflictDb",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "conflict_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_a": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_a_Id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_a_2nd": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_b": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_b_Id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "side_b_2nd": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "incompatibility": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "territory_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "year": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intensity_level": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cumulative_intensity": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "type_of_conflict": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "start_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "start_prec": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "start_date2": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "start_prec2": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ep_end": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ep_end_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ep_end_prec": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gwno_a": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gwno_a_2nd": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gwno_b": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gwno_b_2nd": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gwno_loc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uppsala/main/json-schema/uppsala-ucdpprioconflict-schema.json"
+}

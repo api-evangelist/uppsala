@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uppsala/main/json-structure/uppsala-gedevent-structure.json",
+  "name": "GedDb",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32"
+    },
+    "relid": {
+      "type": "string"
+    },
+    "year": {
+      "type": "int32"
+    },
+    "active_year": {
+      "type": "boolean"
+    },
+    "code_status": {
+      "type": "string"
+    },
+    "type_of_violence": {
+      "type": "int32"
+    },
+    "conflict_dset_id": {
+      "type": "string"
+    },
+    "conflict_new_id": {
+      "type": "int32"
+    },
+    "conflict_name": {
+      "type": "string"
+    },
+    "dyad_dset_id": {
+      "type": "string"
+    },
+    "dyad_new_id": {
+      "type": "int32"
+    },
+    "dyad_name": {
+      "type": "string"
+    },
+    "side_a_dset_id": {
+      "type": "string"
+    },
+    "side_a_new_id": {
+      "type": "int32"
+    },
+    "side_a": {
+      "type": "string"
+    },
+    "side_b_dset_id": {
+      "type": "string"
+    },
+    "side_b_new_id": {
+      "type": "int32"
+    },
+    "side_b": {
+      "type": "string"
+    },
+    "number_of_sources": {
+      "type": "int32"
+    },
+    "source_article": {
+      "type": "string"
+    },
+    "source_office": {
+      "type": "string"
+    },
+    "source_date": {
+      "type": "string"
+    },
+    "source_headline": {
+      "type": "string"
+    },
+    "source_original": {
+      "type": "string"
+    },
+    "where_prec": {
+      "type": "int32"
+    },
+    "where_coordinates": {
+      "type": "string"
+    },
+    "where_description": {
+      "type": "string"
+    },
+    "adm_1": {
+      "type": "string"
+    },
+    "adm_2": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "double"
+    },
+    "longitude": {
+      "type": "double"
+    },
+    "geom_wkt": {
+      "type": "string"
+    },
+    "priogrid_gid": {
+      "type": "int32"
+    },
+    "country": {
+      "type": "string"
+    },
+    "country_id": {
+      "type": "int32"
+    },
+    "region": {
+      "type": "string"
+    },
+    "event_clarity": {
+      "type": "int32"
+    },
+    "date_prec": {
+      "type": "int32"
+    },
+    "date_start": {
+      "type": "datetime"
+    },
+    "date_end": {
+      "type": "datetime"
+    },
+    "deaths_a": {
+      "type": "int32"
+    },
+    "deaths_b": {
+      "type": "int32"
+    },
+    "deaths_civilians": {
+      "type": "int32"
+    },
+    "deaths_unknown": {
+      "type": "int32"
+    },
+    "best": {
+      "type": "int32"
+    },
+    "high": {
+      "type": "int32"
+    },
+    "low": {
+      "type": "int32"
+    },
+    "gwnoa": {
+      "type": "string"
+    },
+    "gwnob": {
+      "type": "string"
+    }
+  }
+}
