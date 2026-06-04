@@ -1,0 +1,93 @@
+---
+aid: uppsala
+name: Uppsala University
+description: >-
+  Uppsala University (Uppsala universitet) is Sweden's oldest university,
+  founded in 1477, and is ranked #103 in the QS World University Rankings 2025.
+  Its public developer and API footprint is research-driven and decentralized
+  across departments and infrastructures rather than a single developer portal.
+  Confirmed public interfaces include the Uppsala Conflict Data Program (UCDP)
+  RESTful API, the Norse World REST-API, and the DiVA institutional repository
+  OAI-PMH endpoint. The university maintains an official GitHub organization
+  hosting integration and research code.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Open Data
+  - Sweden
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: uppsala:ucdp
+    name: UCDP API
+    description: >-
+      The Uppsala Conflict Data Program (UCDP) API is a fully RESTful HTTP API
+      returning JSON, providing programmatic access to UCDP conflict datasets
+      including georeferenced events (gedevents), armed conflict, dyadic,
+      non-state, one-sided violence, and battle-related deaths datasets. Access
+      requires a free access token obtained from the API maintainer, supplied
+      via the x-ucdp-access-token HTTP header, with a quota of 5,000 requests
+      per day.
+    humanURL: https://ucdp.uu.se/apidocs/
+    baseURL: https://ucdpapi.pcr.uu.se/api/
+    tags: [ Research, Conflict Data, REST, JSON, Open Data ]
+    properties:
+      - type: Documentation
+        url: https://ucdp.uu.se/apidocs/
+      - type: Authentication
+        url: https://ucdp.uu.se/apidocs/
+  - aid: uppsala:norseworld
+    name: Norse World REST-API
+    description: >-
+      The Norse World REST-API, part of the Norse World research infrastructure
+      at Uppsala University's Department of Scandinavian Languages, provides
+      access to attestation and location records of foreign place names in
+      medieval Nordic texts. Endpoints (getAttestationAPI.php and
+      getLocationAPI.php) return data as JSON, GeoJSON, or JSON-LD via a
+      ?format= parameter and are usable directly from a URL or GIS tools.
+    humanURL: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
+    baseURL: https://norseworld.nordiska.uu.se/shared/
+    tags: [ Research, Linked Data, GeoJSON, JSON-LD, REST ]
+    properties:
+      - type: Documentation
+        url: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
+  - aid: uppsala:diva-oai
+    name: DiVA OAI-PMH
+    description: >-
+      DiVA (Academic Archive On-line) is Uppsala University Library's
+      institutional repository for publications and research data produced by
+      the university's researchers and students. It exposes an OAI-PMH 2.0
+      endpoint for harvesting publication metadata (oai_dc and other prefixes).
+    humanURL: https://www.uu.se/en/library/publish/diva
+    baseURL: https://uu.diva-portal.org/dice/oai
+    tags: [ Library, Institutional Repository, OAI-PMH, Metadata, Open Access ]
+    properties:
+      - type: Documentation
+        url: https://www.uu.se/en/library/publish/diva
+common:
+  - type: Website
+    url: https://www.uu.se/
+  - type: GitHub
+    url: https://github.com/uppsala-university
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/uppsala-university/
+  - type: Plans
+    url: plans/uppsala-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/uppsala-rate-limits.yml
+  - type: FinOps
+    url: finops/uppsala-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+---

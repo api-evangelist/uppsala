@@ -1,0 +1,41 @@
+---
+name: Uppsala University
+description: Uppsala University public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      Uppsala University has no central developer portal; its public API
+      footprint is research-infrastructure driven and decentralized. Three
+      public interfaces were verified live: the UCDP RESTful API (returns 401
+      without a token, exactly as documented — token is free on request), the
+      Norse World REST-API (200, returns JSON/GeoJSON/JSON-LD), and the DiVA
+      institutional repository OAI-PMH 2.0 endpoint (200, Identify verb
+      confirmed). The official GitHub org and website resolve. No endpoints or
+      properties were fabricated; only confirmed resources are cataloged.
+    endpoints:
+      - url: https://ucdp.uu.se/apidocs/
+        status: 200
+        note: UCDP API documentation, base ucdpapi.pcr.uu.se/api/, JSON, token via x-ucdp-access-token.
+      - url: https://ucdpapi.pcr.uu.se/api/gedevents/25.1?pagesize=1&page=0
+        status: 401
+        note: Live API; 401 expected without access token, per documentation.
+      - url: https://norseworld.nordiska.uu.se/shared/getLocationAPI.php?format=json
+        status: 200
+        note: Norse World REST-API live; returns JSON/GeoJSON/JSON-LD via ?format=.
+      - url: https://uu.diva-portal.org/dice/oai?verb=Identify
+        status: 200
+        note: DiVA OAI-PMH 2.0 endpoint; Identify confirms 'DiVA - Academic Archive On-line'.
+      - url: https://www.uu.se/
+        status: 200
+        note: Official university website.
+      - url: https://github.com/uppsala-university
+        status: 200
+        note: Official Uppsala University GitHub org (~22 repos, integration/research code).
+      - url: https://www.linkedin.com/school/uppsala-university/
+        status: 999
+        note: Official LinkedIn school page; 999 is standard LinkedIn bot block, page exists.
+---
