@@ -87,6 +87,12 @@ apis:
       - type: Documentation
         url: https://www.uu.se/en/library/publish/diva
 common:
+  - type: VulnerabilityDisclosure
+    url: security/uppsala-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/uppsala-domain-security.yml
+  - type: Authentication
+    url: authentication/uppsala-authentication.yml
   - type: Website
     url: https://www.uu.se/
   - type: GitHub

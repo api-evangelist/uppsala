@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/uppsala-ucdp.yaml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiToken
+  type: apiKey
+  in: header
+  parameter: x-ucdp-access-token
+  description: UCDP API token sent in x-ucdp-access-token header
+  sources:
+  - openapi/uppsala-ucdp.yaml
