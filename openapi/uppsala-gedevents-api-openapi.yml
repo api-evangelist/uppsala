@@ -1,0 +1,289 @@
+openapi: 3.0.1
+info:
+  title: UCDP - The Public BattleDeaths GEDEvents API
+  description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
+  version: '1.0'
+  contact:
+    name: Uppsala Conflict Data Program
+    url: https://ucdp.uu.se/apidocs/
+servers:
+- url: https://ucdpapi.pcr.uu.se
+  description: UCDP Public API
+security:
+- ApiToken: []
+tags:
+- name: GEDEvents
+paths:
+  /api/GEDEvents/{version}:
+    get:
+      tags:
+      - GEDEvents
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Id
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Geography
+        in: query
+        schema:
+          type: string
+      - name: StartDate
+        in: query
+        schema:
+          type: string
+      - name: EndDate
+        in: query
+        schema:
+          type: string
+      - name: TypeOfViolence
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Actor
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GedDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GedDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GedDbAPIResponse'
+components:
+  schemas:
+    GedDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/GedDb'
+          nullable: true
+      additionalProperties: false
+    GedDb:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          nullable: true
+        relid:
+          type: string
+          nullable: true
+        year:
+          type: integer
+          format: int32
+          nullable: true
+        active_year:
+          type: boolean
+          nullable: true
+        code_status:
+          type: string
+          nullable: true
+        type_of_violence:
+          type: integer
+          format: int32
+          nullable: true
+        conflict_dset_id:
+          type: string
+          nullable: true
+        conflict_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        conflict_name:
+          type: string
+          nullable: true
+        dyad_dset_id:
+          type: string
+          nullable: true
+        dyad_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        dyad_name:
+          type: string
+          nullable: true
+        side_a_dset_id:
+          type: string
+          nullable: true
+        side_a_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_b_dset_id:
+          type: string
+          nullable: true
+        side_b_new_id:
+          type: integer
+          format: int32
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        number_of_sources:
+          type: integer
+          format: int32
+          nullable: true
+        source_article:
+          type: string
+          nullable: true
+        source_office:
+          type: string
+          nullable: true
+        source_date:
+          type: string
+          nullable: true
+        source_headline:
+          type: string
+          nullable: true
+        source_original:
+          type: string
+          nullable: true
+        where_prec:
+          type: integer
+          format: int32
+          nullable: true
+        where_coordinates:
+          type: string
+          nullable: true
+        where_description:
+          type: string
+          nullable: true
+        adm_1:
+          type: string
+          nullable: true
+        adm_2:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+        geom_wkt:
+          type: string
+          nullable: true
+        priogrid_gid:
+          type: integer
+          format: int32
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        country_id:
+          type: integer
+          format: int32
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        event_clarity:
+          type: integer
+          format: int32
+          nullable: true
+        date_prec:
+          type: integer
+          format: int32
+          nullable: true
+        date_start:
+          type: string
+          format: date-time
+          nullable: true
+        date_end:
+          type: string
+          format: date-time
+          nullable: true
+        deaths_a:
+          type: integer
+          format: int32
+          nullable: true
+        deaths_b:
+          type: integer
+          format: int32
+          nullable: true
+        deaths_civilians:
+          type: integer
+          format: int32
+          nullable: true
+        deaths_unknown:
+          type: integer
+          format: int32
+          nullable: true
+        best:
+          type: integer
+          format: int32
+          nullable: true
+        high:
+          type: integer
+          format: int32
+          nullable: true
+        low:
+          type: integer
+          format: int32
+          nullable: true
+        gwnoa:
+          type: string
+          nullable: true
+        gwnob:
+          type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    ApiToken:
+      type: apiKey
+      description: UCDP API token sent in x-ucdp-access-token header
+      name: x-ucdp-access-token
+      in: header

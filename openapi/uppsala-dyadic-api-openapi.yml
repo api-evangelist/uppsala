@@ -1,0 +1,185 @@
+openapi: 3.0.1
+info:
+  title: UCDP - The Public BattleDeaths Dyadic API
+  description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
+  version: '1.0'
+  contact:
+    name: Uppsala Conflict Data Program
+    url: https://ucdp.uu.se/apidocs/
+servers:
+- url: https://ucdpapi.pcr.uu.se
+  description: UCDP Public API
+security:
+- ApiToken: []
+tags:
+- name: Dyadic
+paths:
+  /api/Dyadic/{version}:
+    get:
+      tags:
+      - Dyadic
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Conflict
+        in: query
+        schema:
+          type: string
+      - name: ConflictType
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: ConflictIncompatibility
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DyadicDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DyadicDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DyadicDbAPIResponse'
+components:
+  schemas:
+    DyadicDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/DyadicDb'
+          nullable: true
+      additionalProperties: false
+    DyadicDb:
+      type: object
+      properties:
+        dyad_id:
+          type: string
+          nullable: true
+        conflict_id:
+          type: string
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_a_id:
+          type: string
+          nullable: true
+        side_a_2nd:
+          type: string
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        side_b_id:
+          type: string
+          nullable: true
+        side_b_2nd:
+          type: string
+          nullable: true
+        incompatibility:
+          type: string
+          nullable: true
+        territory_name:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        intensity_level:
+          type: string
+          nullable: true
+        type_of_conflict:
+          type: string
+          nullable: true
+        start_date:
+          type: string
+          nullable: true
+        start_prec:
+          type: string
+          nullable: true
+        start_date2:
+          type: string
+          nullable: true
+        start_prec2:
+          type: string
+          nullable: true
+        gwno_a:
+          type: string
+          nullable: true
+        gwno_a_2nd:
+          type: string
+          nullable: true
+        gwno_b:
+          type: string
+          nullable: true
+        gwno_b_2nd:
+          type: string
+          nullable: true
+        gwno_loc:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    ApiToken:
+      type: apiKey
+      description: UCDP API token sent in x-ucdp-access-token header
+      name: x-ucdp-access-token
+      in: header

@@ -1,0 +1,185 @@
+openapi: 3.0.1
+info:
+  title: UCDP - The Public BattleDeaths API
+  description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
+  version: '1.0'
+  contact:
+    name: Uppsala Conflict Data Program
+    url: https://ucdp.uu.se/apidocs/
+servers:
+- url: https://ucdpapi.pcr.uu.se
+  description: UCDP Public API
+security:
+- ApiToken: []
+tags:
+- name: BattleDeaths
+paths:
+  /api/BattleDeaths/{version}:
+    get:
+      tags:
+      - BattleDeaths
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: string
+      - name: Country
+        in: query
+        schema:
+          type: string
+      - name: Conflict
+        in: query
+        schema:
+          type: string
+      - name: ConflictType
+        in: query
+        schema:
+          type: string
+      - name: Year
+        in: query
+        schema:
+          type: string
+      - name: ConflictIncompatibility
+        in: query
+        schema:
+          type: string
+      - name: Dyad
+        in: query
+        schema:
+          type: string
+      - name: Key
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+components:
+  schemas:
+    BattleDeathsDb:
+      type: object
+      properties:
+        conflict_id:
+          type: string
+          nullable: true
+        dyad_id:
+          type: string
+          nullable: true
+        location_inc:
+          type: string
+          nullable: true
+        side_a:
+          type: string
+          nullable: true
+        side_a_id:
+          type: string
+          nullable: true
+        side_a_2nd:
+          type: string
+          nullable: true
+        side_b:
+          type: string
+          nullable: true
+        side_b_Id:
+          type: string
+          nullable: true
+        side_b_2nd:
+          type: string
+          nullable: true
+        incompatibility:
+          type: string
+          nullable: true
+        territory_name:
+          type: string
+          nullable: true
+        year:
+          type: string
+          nullable: true
+        bd_best:
+          type: string
+          nullable: true
+        bd_low:
+          type: string
+          nullable: true
+        bd_high:
+          type: string
+          nullable: true
+        type_of_conflict:
+          type: string
+          nullable: true
+        battle_location:
+          type: string
+          nullable: true
+        gwno_a:
+          type: string
+          nullable: true
+        gwno_a_2nd:
+          type: string
+          nullable: true
+        gwno_b:
+          type: string
+          nullable: true
+        gwno_b_2nd:
+          type: string
+          nullable: true
+        gwno_loc:
+          type: string
+          nullable: true
+        gwno_battle:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        version:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BattleDeathsDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          nullable: true
+        TotalPages:
+          type: integer
+          format: int32
+          nullable: true
+        PreviousPageUrl:
+          type: string
+          nullable: true
+        NextPageUrl:
+          type: string
+          nullable: true
+        Result:
+          type: array
+          items:
+            $ref: '#/components/schemas/BattleDeathsDb'
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    ApiToken:
+      type: apiKey
+      description: UCDP API token sent in x-ucdp-access-token header
+      name: x-ucdp-access-token
+      in: header
