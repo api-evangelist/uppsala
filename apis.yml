@@ -11,9 +11,22 @@ description: >-
   OAI-PMH endpoint. The university maintains an official GitHub organization
   hosting integration and research code.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uppsala.png
 url: https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/apis.yml
 tags:
   - Education
@@ -26,66 +39,225 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: uppsala:ucdp
-    name: UCDP API
-    description: >-
-      The Uppsala Conflict Data Program (UCDP) API is a fully RESTful HTTP API
-      returning JSON, providing programmatic access to UCDP conflict datasets
-      including georeferenced events (gedevents), armed conflict, dyadic,
-      non-state, one-sided violence, and battle-related deaths datasets. Access
-      requires a free access token obtained from the API maintainer, supplied
-      via the x-ucdp-access-token HTTP header, with a quota of 5,000 requests
-      per day.
-    humanURL: https://ucdp.uu.se/apidocs/
-    baseURL: https://ucdpapi.pcr.uu.se/api/
-    tags: [ Research, Conflict Data, REST, JSON, Open Data ]
-    properties:
-      - type: Documentation
-        url: https://ucdp.uu.se/apidocs/
-      - type: Authentication
-        url: https://ucdp.uu.se/apidocs/
-      - type: OpenAPI
-        url: openapi/uppsala-ucdp.yaml
-      - type: JSONSchema
-        url: json-schema/uppsala-gedevent-schema.json
-      - type: JSONStructure
-        url: json-structure/uppsala-gedevent-structure.json
-      - type: Examples
-        url: examples/uppsala-gedevents-example.json
-      - type: Rules
-        url: rules/uppsala-rules.yml
-      - type: Vocabulary
-        url: vocabulary/uppsala-vocabulary.yml
-      - type: JSONLD
-        url: json-ld/uppsala-context.jsonld
-  - aid: uppsala:norseworld
-    name: Norse World REST-API
-    description: >-
-      The Norse World REST-API, part of the Norse World research infrastructure
-      at Uppsala University's Department of Scandinavian Languages, provides
-      access to attestation and location records of foreign place names in
-      medieval Nordic texts. Endpoints (getAttestationAPI.php and
-      getLocationAPI.php) return data as JSON, GeoJSON, or JSON-LD via a
-      ?format= parameter and are usable directly from a URL or GIS tools.
-    humanURL: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
-    baseURL: https://norseworld.nordiska.uu.se/shared/
-    tags: [ Research, Linked Data, GeoJSON, JSON-LD, REST ]
-    properties:
-      - type: Documentation
-        url: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
-  - aid: uppsala:diva-oai
-    name: DiVA OAI-PMH
-    description: >-
-      DiVA (Academic Archive On-line) is Uppsala University Library's
-      institutional repository for publications and research data produced by
-      the university's researchers and students. It exposes an OAI-PMH 2.0
-      endpoint for harvesting publication metadata (oai_dc and other prefixes).
-    humanURL: https://www.uu.se/en/library/publish/diva
-    baseURL: https://uu.diva-portal.org/dice/oai
-    tags: [ Library, Institutional Repository, OAI-PMH, Metadata, Open Access ]
-    properties:
-      - type: Documentation
-        url: https://www.uu.se/en/library/publish/diva
+- aid: uppsala:norseworld
+  name: Norse World REST-API
+  description: >-
+    The Norse World REST-API, part of the Norse World research infrastructure at Uppsala University's
+    Department of Scandinavian Languages, provides access to attestation and location records of foreign
+    place names in medieval Nordic texts. Endpoints (getAttestationAPI.php and getLocationAPI.php) return
+    data as JSON, GeoJSON, or JSON-LD via a ?format= parameter and are usable directly from a URL or GIS
+    tools.
+  humanURL: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
+  baseURL: https://norseworld.nordiska.uu.se/shared/
+  tags:
+  - Research
+  - Linked Data
+  - GeoJSON
+  - JSON-LD
+  - REST
+  properties:
+  - type: Documentation
+    url: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
+- aid: uppsala:diva-oai
+  name: DiVA OAI-PMH
+  description: >-
+    DiVA (Academic Archive On-line) is Uppsala University Library's institutional repository for publications
+    and research data produced by the university's researchers and students. It exposes an OAI-PMH 2.0
+    endpoint for harvesting publication metadata (oai_dc and other prefixes).
+  humanURL: https://www.uu.se/en/library/publish/diva
+  baseURL: https://uu.diva-portal.org/dice/oai
+  tags:
+  - Library
+  - Institutional Repository
+  - OAI-PMH
+  - Metadata
+  - Open Access
+  properties:
+  - type: Documentation
+    url: https://www.uu.se/en/library/publish/diva
+- aid: uppsala:uppsala-battledeaths-api
+  name: Uppsala University BattleDeaths API
+  description: The BattleDeaths API from Uppsala University — 1 operation(s) for battledeaths.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - BattleDeaths
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-battledeaths-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
+- aid: uppsala:uppsala-dyadic-api
+  name: Uppsala University Dyadic API
+  description: The Dyadic API from Uppsala University — 1 operation(s) for dyadic.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - Dyadic
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-dyadic-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
+- aid: uppsala:uppsala-gedevents-api
+  name: Uppsala University GEDEvents API
+  description: The GEDEvents API from Uppsala University — 1 operation(s) for gedevents.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - GEDEvents
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-gedevents-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
+- aid: uppsala:uppsala-nonstate-api
+  name: Uppsala University NonState API
+  description: The NonState API from Uppsala University — 1 operation(s) for nonstate.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - NonState
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-nonstate-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
+- aid: uppsala:uppsala-onesided-api
+  name: Uppsala University OneSided API
+  description: The OneSided API from Uppsala University — 1 operation(s) for onesided.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - OneSided
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-onesided-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
+- aid: uppsala:uppsala-organizedviolencecy-api
+  name: Uppsala University OrganizedViolenceCY API
+  description: >-
+    The OrganizedViolenceCY API from Uppsala University — 1 operation(s) for organizedviolencecy.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - OrganizedViolenceCY
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-organizedviolencecy-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
+- aid: uppsala:uppsala-ucdpprioconflict-api
+  name: Uppsala University UcdpPrioConflict API
+  description: The UcdpPrioConflict API from Uppsala University — 1 operation(s) for ucdpprioconflict.
+  humanURL: https://ucdp.uu.se/apidocs/
+  baseURL: https://ucdpapi.pcr.uu.se/api/
+  tags:
+  - UcdpPrioConflict
+  properties:
+  - type: OpenAPI
+    url: openapi/uppsala-ucdpprioconflict-api-openapi.yml
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: Authentication
+    url: https://ucdp.uu.se/apidocs/
+  - type: JSONSchema
+    url: json-schema/uppsala-gedevent-schema.json
+  - type: JSONStructure
+    url: json-structure/uppsala-gedevent-structure.json
+  - type: Examples
+    url: examples/uppsala-gedevents-example.json
+  - type: Rules
+    url: rules/uppsala-rules.yml
+  - type: Vocabulary
+    url: vocabulary/uppsala-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/uppsala-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/uppsala-agentic-access.yml
