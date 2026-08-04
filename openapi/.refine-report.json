@@ -1,0 +1,26 @@
+{
+  "provider": "uppsala",
+  "sources": [
+    "uppsala-battledeaths-api-openapi.yml",
+    "uppsala-dyadic-api-openapi.yml",
+    "uppsala-gedevents-api-openapi.yml",
+    "uppsala-nonstate-api-openapi.yml",
+    "uppsala-onesided-api-openapi.yml",
+    "uppsala-organizedviolencecy-api-openapi.yml",
+    "uppsala-ucdpprioconflict-api-openapi.yml"
+  ],
+  "outputs": [
+    "uppsala-battledeaths-api-openapi.yml",
+    "uppsala-dyadic-api-openapi.yml",
+    "uppsala-gedevents-api-openapi.yml",
+    "uppsala-nonstate-api-openapi.yml",
+    "uppsala-onesided-api-openapi.yml",
+    "uppsala-organizedviolencecy-api-openapi.yml",
+    "uppsala-ucdpprioconflict-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
