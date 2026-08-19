@@ -1,0 +1,227 @@
+{
+  "item": [
+    {
+      "id": "f0686d6b-8a82-4922-8e66-e72738b6cfbc",
+      "name": "Dyadic",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "205b11cb-265f-4a29-8827-3dad3fa3e56c",
+          "name": "/api/Dyadic/:version",
+          "request": {
+            "name": "/api/Dyadic/:version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Dyadic",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pagesize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Conflict",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ConflictType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ConflictIncompatibility",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Dyad",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "325a106d-8974-43a3-acb1-177d712776a8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Dyadic",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagesize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Conflict",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ConflictType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ConflictIncompatibility",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Dyad",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-ucdp-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 7242,\n  \"TotalPages\": 9591,\n  \"PreviousPageUrl\": \"string\",\n  \"NextPageUrl\": \"string\",\n  \"Result\": [\n    {\n      \"dyad_id\": \"string\",\n      \"conflict_id\": \"string\",\n      \"location\": \"string\",\n      \"side_a\": \"string\",\n      \"side_a_id\": \"string\",\n      \"side_a_2nd\": \"string\",\n      \"side_b\": \"string\",\n      \"side_b_id\": \"string\",\n      \"side_b_2nd\": \"string\",\n      \"incompatibility\": \"string\",\n      \"territory_name\": \"string\",\n      \"year\": \"string\",\n      \"intensity_level\": \"string\",\n      \"type_of_conflict\": \"string\",\n      \"start_date\": \"string\",\n      \"start_prec\": \"string\",\n      \"start_date2\": \"string\",\n      \"start_prec2\": \"string\",\n      \"gwno_a\": \"string\",\n      \"gwno_a_2nd\": \"string\",\n      \"gwno_b\": \"string\",\n      \"gwno_b_2nd\": \"string\",\n      \"gwno_loc\": \"string\",\n      \"region\": \"string\",\n      \"version\": \"string\"\n    },\n    {\n      \"dyad_id\": \"string\",\n      \"conflict_id\": \"string\",\n      \"location\": \"string\",\n      \"side_a\": \"string\",\n      \"side_a_id\": \"string\",\n      \"side_a_2nd\": \"string\",\n      \"side_b\": \"string\",\n      \"side_b_id\": \"string\",\n      \"side_b_2nd\": \"string\",\n      \"incompatibility\": \"string\",\n      \"territory_name\": \"string\",\n      \"year\": \"string\",\n      \"intensity_level\": \"string\",\n      \"type_of_conflict\": \"string\",\n      \"start_date\": \"string\",\n      \"start_prec\": \"string\",\n      \"start_date2\": \"string\",\n      \"start_prec2\": \"string\",\n      \"gwno_a\": \"string\",\n      \"gwno_a_2nd\": \"string\",\n      \"gwno_b\": \"string\",\n      \"gwno_b_2nd\": \"string\",\n      \"gwno_loc\": \"string\",\n      \"region\": \"string\",\n      \"version\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ucdpapi.pcr.uu.se",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-ucdp-access-token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "82748565-4644-4aa0-9439-f227842af1ea",
+    "name": "UCDP - The Public BattleDeaths Dyadic API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).\n\nContact Support:\n Name: Uppsala Conflict Data Program",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UCDP - The Public BattleDeaths OrganizedViolenceCY API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-ucdp-access-token",
+      "value": "{{x-ucdp-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OrganizedViolenceCY",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /api/organizedviolencecy/{version}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ucdpapi.pcr.uu.se/api/organizedviolencecy/:version",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pagesize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Country_Id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Region",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Govt_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Sb_exist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Sb_intrastate_exist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Sb_interstate_exist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Ns_exist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Os_exist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

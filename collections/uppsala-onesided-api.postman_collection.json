@@ -1,0 +1,200 @@
+{
+  "item": [
+    {
+      "id": "d9db16ac-aa45-4a9a-83a4-472f43ecf251",
+      "name": "OneSided",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a927d302-238e-49dc-a214-3749d330087f",
+          "name": "/api/OneSided/:version",
+          "request": {
+            "name": "/api/OneSided/:version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "OneSided",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pagesize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Dyad",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebef77d8-bac5-4f64-ab16-b27c8c3fb262",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "OneSided",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagesize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Dyad",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-ucdp-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 9383,\n  \"TotalPages\": 1802,\n  \"PreviousPageUrl\": \"string\",\n  \"NextPageUrl\": \"string\",\n  \"Result\": [\n    {\n      \"conflict_id\": \"string\",\n      \"dyad_id\": \"string\",\n      \"actor_id\": \"string\",\n      \"coalition_components\": \"string\",\n      \"actor_name\": \"string\",\n      \"actor_name_fulltext\": \"string\",\n      \"actor_name_mothertongue\": \"string\",\n      \"year\": 6895,\n      \"best_fatality_estimate\": 3491,\n      \"low_fatality_estimate\": 9490,\n      \"high_fatality_estimate\": 7481,\n      \"is_government_actor\": 3592,\n      \"location\": \"string\",\n      \"gwno_location\": \"string\",\n      \"gwnoa\": \"string\",\n      \"region\": \"string\",\n      \"version\": \"string\"\n    },\n    {\n      \"conflict_id\": \"string\",\n      \"dyad_id\": \"string\",\n      \"actor_id\": \"string\",\n      \"coalition_components\": \"string\",\n      \"actor_name\": \"string\",\n      \"actor_name_fulltext\": \"string\",\n      \"actor_name_mothertongue\": \"string\",\n      \"year\": 2981,\n      \"best_fatality_estimate\": 94,\n      \"low_fatality_estimate\": 5119,\n      \"high_fatality_estimate\": 410,\n      \"is_government_actor\": 8360,\n      \"location\": \"string\",\n      \"gwno_location\": \"string\",\n      \"gwnoa\": \"string\",\n      \"region\": \"string\",\n      \"version\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ucdpapi.pcr.uu.se",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-ucdp-access-token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "888dca68-7353-4834-9d68-7678a7cfe10e",
+    "name": "UCDP - The Public BattleDeaths OneSided API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).\n\nContact Support:\n Name: Uppsala Conflict Data Program",
+      "type": "text/plain"
+    }
+  }
+}

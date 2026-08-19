@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UCDP - The Public BattleDeaths GEDEvents API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-ucdp-access-token",
+      "value": "{{x-ucdp-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GEDEvents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /api/GEDEvents/{version}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ucdpapi.pcr.uu.se/api/GEDEvents/:version",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pagesize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Geography",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "TypeOfViolence",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Dyad",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Actor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

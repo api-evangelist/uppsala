@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "1dd9ac78-5faf-4d49-b508-0e289dbc914a",
+      "name": "OrganizedViolenceCY",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b5c4f88a-a6f0-449d-9f1c-5429bb1a3d9c",
+          "name": "/api/organizedviolencecy/:version",
+          "request": {
+            "name": "/api/organizedviolencecy/:version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "organizedviolencecy",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pagesize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Country_Id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Year",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Region",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Govt_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Sb_exist",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Sb_intrastate_exist",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Sb_interstate_exist",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Ns_exist",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Os_exist",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "effa2736-37bb-4ea4-a672-c5bfa5573d34",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizedviolencecy",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagesize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Country_Id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Govt_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Sb_exist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Sb_intrastate_exist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Sb_interstate_exist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Ns_exist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Os_exist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-ucdp-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 9692,\n  \"TotalPages\": 839,\n  \"PreviousPageUrl\": \"string\",\n  \"NextPageUrl\": \"string\",\n  \"Result\": [\n    {\n      \"country\": \"string\",\n      \"country_id\": 9266,\n      \"year\": 2524,\n      \"region\": \"string\",\n      \"govt_name\": \"string\",\n      \"sb_exist\": 1041,\n      \"sb_dyad_count\": 7018,\n      \"sb_dyad_ids\": \"string\",\n      \"sb_dyad_names\": \"string\",\n      \"sb_deaths_parties\": 5404,\n      \"sb_deaths_civilians\": 6163,\n      \"sb_deaths_unknown\": 5540,\n      \"sb_total_deaths_best\": 4667,\n      \"sb_total_deaths_high\": 6826,\n      \"sb_total_deaths_low\": 6199,\n      \"sb_intrastate_exist\": 3885,\n      \"sb_intrastate_dyad_count\": 18,\n      \"sb_intrastate_dyad_ids\": \"string\",\n      \"sb_intrastate_dyad_names\": \"string\",\n      \"sb_intrastate_govt_inv_incomp\": 7086,\n      \"sb_intrastate_deaths_parties\": 7316,\n      \"sb_intrastate_deaths_civilians\": 1139,\n      \"sb_intrastate_deaths_unknown\": 90,\n      \"sb_intrastate_deaths_best\": 7523,\n      \"sb_intrastate_deaths_high\": 1732,\n      \"sb_intrastate_deaths_low\": 9163,\n      \"sb_interstate_exist\": 6487,\n      \"sb_interstate_dyad_count\": 9888,\n      \"sb_interstate_dyad_ids\": \"string\",\n      \"sb_interstate_dyad_names\": \"string\",\n      \"sb_interstate_govt_inv_incomp\": 7487,\n      \"sb_interstate_deaths_parties\": 81,\n      \"sb_interstate_deaths_civilians\": 7936,\n      \"sb_interstate_deaths_unknown\": 9271,\n      \"sb_interstate_deaths_best\": 7991,\n      \"sb_interstate_deaths_high\": 918,\n      \"sb_interstate_deaths_low\": 5664,\n      \"ns_exist\": 733,\n      \"ns_dyad_count\": 7100,\n      \"ns_dyad_ids\": \"string\",\n      \"ns_dyad_names\": \"string\",\n      \"ns_deaths_parties\": 4480,\n      \"ns_deaths_civilians\": 9655,\n      \"ns_deaths_unknown\": 816,\n      \"ns_total_deaths_best\": 5258,\n      \"ns_total_deaths_high\": 6495,\n      \"ns_total_deaths_low\": 6004,\n      \"os_exist\": 3938,\n      \"os_dyad_count\": 7502,\n      \"os_dyad_ids\": \"string\",\n      \"os_dyad_names\": \"string\",\n      \"os_govt_inv\": 6119,\n      \"os_govt_killings_best\": 7131,\n      \"os_govt_killings_high\": 3933,\n      \"os_govt_killings_low\": 1833,\n      \"os_any_govt_inv\": 5299,\n      \"os_any_govt_killings_best\": 8545,\n      \"os_any_govt_killings_high\": 4314,\n      \"os_any_govt_killings_low\": 5330,\n      \"os_nsgroup_inv\": 6346,\n      \"os_nsgroup_killings_best\": 4288,\n      \"os_nsgroup_killings_high\": 3887,\n      \"os_nsgroup_killings_low\": 6550,\n      \"os_killings_unknown\": 6609,\n      \"os_total_deaths_best\": 2706,\n      \"os_total_deaths_high\": 9624,\n      \"os_total_deaths_low\": 5714,\n      \"cumulative_total_deaths_parties_in_orgvio\": 7702,\n      \"cumulative_total_deaths_civilians_in_orgvio\": 278,\n      \"cumulative_total_deaths_unknown_in_orgvio\": 5135,\n      \"cumulative_total_deaths_in_orgvio_best\": 9033,\n      \"cumulative_total_deaths_in_orgvio_high\": 1753,\n      \"cumulative_total_deaths_in_orgvio_low\": 6122,\n      \"Version\": \"string\"\n    },\n    {\n      \"country\": \"string\",\n      \"country_id\": 5722,\n      \"year\": 870,\n      \"region\": \"string\",\n      \"govt_name\": \"string\",\n      \"sb_exist\": 8605,\n      \"sb_dyad_count\": 619,\n      \"sb_dyad_ids\": \"string\",\n      \"sb_dyad_names\": \"string\",\n      \"sb_deaths_parties\": 6686,\n      \"sb_deaths_civilians\": 9324,\n      \"sb_deaths_unknown\": 576,\n      \"sb_total_deaths_best\": 984,\n      \"sb_total_deaths_high\": 9356,\n      \"sb_total_deaths_low\": 173,\n      \"sb_intrastate_exist\": 683,\n      \"sb_intrastate_dyad_count\": 2931,\n      \"sb_intrastate_dyad_ids\": \"string\",\n      \"sb_intrastate_dyad_names\": \"string\",\n      \"sb_intrastate_govt_inv_incomp\": 9049,\n      \"sb_intrastate_deaths_parties\": 5799,\n      \"sb_intrastate_deaths_civilians\": 5872,\n      \"sb_intrastate_deaths_unknown\": 5376,\n      \"sb_intrastate_deaths_best\": 1259,\n      \"sb_intrastate_deaths_high\": 6013,\n      \"sb_intrastate_deaths_low\": 5019,\n      \"sb_interstate_exist\": 2869,\n      \"sb_interstate_dyad_count\": 600,\n      \"sb_interstate_dyad_ids\": \"string\",\n      \"sb_interstate_dyad_names\": \"string\",\n      \"sb_interstate_govt_inv_incomp\": 5205,\n      \"sb_interstate_deaths_parties\": 2959,\n      \"sb_interstate_deaths_civilians\": 2585,\n      \"sb_interstate_deaths_unknown\": 2778,\n      \"sb_interstate_deaths_best\": 1469,\n      \"sb_interstate_deaths_high\": 1694,\n      \"sb_interstate_deaths_low\": 5329,\n      \"ns_exist\": 2921,\n      \"ns_dyad_count\": 3086,\n      \"ns_dyad_ids\": \"string\",\n      \"ns_dyad_names\": \"string\",\n      \"ns_deaths_parties\": 3632,\n      \"ns_deaths_civilians\": 9586,\n      \"ns_deaths_unknown\": 7370,\n      \"ns_total_deaths_best\": 5353,\n      \"ns_total_deaths_high\": 3642,\n      \"ns_total_deaths_low\": 5961,\n      \"os_exist\": 3187,\n      \"os_dyad_count\": 605,\n      \"os_dyad_ids\": \"string\",\n      \"os_dyad_names\": \"string\",\n      \"os_govt_inv\": 3320,\n      \"os_govt_killings_best\": 574,\n      \"os_govt_killings_high\": 4152,\n      \"os_govt_killings_low\": 7901,\n      \"os_any_govt_inv\": 73,\n      \"os_any_govt_killings_best\": 8157,\n      \"os_any_govt_killings_high\": 2213,\n      \"os_any_govt_killings_low\": 7212,\n      \"os_nsgroup_inv\": 7217,\n      \"os_nsgroup_killings_best\": 667,\n      \"os_nsgroup_killings_high\": 5746,\n      \"os_nsgroup_killings_low\": 4768,\n      \"os_killings_unknown\": 4059,\n      \"os_total_deaths_best\": 5763,\n      \"os_total_deaths_high\": 1626,\n      \"os_total_deaths_low\": 8352,\n      \"cumulative_total_deaths_parties_in_orgvio\": 399,\n      \"cumulative_total_deaths_civilians_in_orgvio\": 3055,\n      \"cumulative_total_deaths_unknown_in_orgvio\": 9185,\n      \"cumulative_total_deaths_in_orgvio_best\": 3122,\n      \"cumulative_total_deaths_in_orgvio_high\": 4986,\n      \"cumulative_total_deaths_in_orgvio_low\": 2061,\n      \"Version\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ucdpapi.pcr.uu.se",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-ucdp-access-token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d2ec3600-67b9-479e-9417-98ae78f0b249",
+    "name": "UCDP - The Public BattleDeaths OrganizedViolenceCY API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).\n\nContact Support:\n Name: Uppsala Conflict Data Program",
+      "type": "text/plain"
+    }
+  }
+}

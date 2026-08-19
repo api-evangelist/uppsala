@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "6fa43659-c219-4274-804b-59ba875bfa57",
+      "name": "GEDEvents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e339685-3b05-4ac0-bb5f-ca2125216a20",
+          "name": "/api/GEDEvents/:version",
+          "request": {
+            "name": "/api/GEDEvents/:version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "GEDEvents",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pagesize",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Geography",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "TypeOfViolence",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Dyad",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Actor",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c443e7f-a6fd-4b44-8b73-865a91862b05",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "GEDEvents",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagesize",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Geography",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "TypeOfViolence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Dyad",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Actor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-ucdp-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 9803,\n  \"TotalPages\": 6306,\n  \"PreviousPageUrl\": \"string\",\n  \"NextPageUrl\": \"string\",\n  \"Result\": [\n    {\n      \"id\": 6790,\n      \"relid\": \"string\",\n      \"year\": 7780,\n      \"active_year\": false,\n      \"code_status\": \"string\",\n      \"type_of_violence\": 4433,\n      \"conflict_dset_id\": \"string\",\n      \"conflict_new_id\": 5609,\n      \"conflict_name\": \"string\",\n      \"dyad_dset_id\": \"string\",\n      \"dyad_new_id\": 3612,\n      \"dyad_name\": \"string\",\n      \"side_a_dset_id\": \"string\",\n      \"side_a_new_id\": 4428,\n      \"side_a\": \"string\",\n      \"side_b_dset_id\": \"string\",\n      \"side_b_new_id\": 4373,\n      \"side_b\": \"string\",\n      \"number_of_sources\": 132,\n      \"source_article\": \"string\",\n      \"source_office\": \"string\",\n      \"source_date\": \"string\",\n      \"source_headline\": \"string\",\n      \"source_original\": \"string\",\n      \"where_prec\": 3939,\n      \"where_coordinates\": \"string\",\n      \"where_description\": \"string\",\n      \"adm_1\": \"string\",\n      \"adm_2\": \"string\",\n      \"latitude\": 6893.017859660722,\n      \"longitude\": 3516.3489300907345,\n      \"geom_wkt\": \"string\",\n      \"priogrid_gid\": 9948,\n      \"country\": \"string\",\n      \"country_id\": 7759,\n      \"region\": \"string\",\n      \"event_clarity\": 9459,\n      \"date_prec\": 5828,\n      \"date_start\": \"1988-03-25T15:27:29.688Z\",\n      \"date_end\": \"1973-02-11T12:54:30.427Z\",\n      \"deaths_a\": 9252,\n      \"deaths_b\": 9545,\n      \"deaths_civilians\": 9933,\n      \"deaths_unknown\": 7284,\n      \"best\": 6323,\n      \"high\": 7692,\n      \"low\": 8792,\n      \"gwnoa\": \"string\",\n      \"gwnob\": \"string\"\n    },\n    {\n      \"id\": 8938,\n      \"relid\": \"string\",\n      \"year\": 4997,\n      \"active_year\": true,\n      \"code_status\": \"string\",\n      \"type_of_violence\": 6346,\n      \"conflict_dset_id\": \"string\",\n      \"conflict_new_id\": 9453,\n      \"conflict_name\": \"string\",\n      \"dyad_dset_id\": \"string\",\n      \"dyad_new_id\": 577,\n      \"dyad_name\": \"string\",\n      \"side_a_dset_id\": \"string\",\n      \"side_a_new_id\": 6844,\n      \"side_a\": \"string\",\n      \"side_b_dset_id\": \"string\",\n      \"side_b_new_id\": 203,\n      \"side_b\": \"string\",\n      \"number_of_sources\": 2651,\n      \"source_article\": \"string\",\n      \"source_office\": \"string\",\n      \"source_date\": \"string\",\n      \"source_headline\": \"string\",\n      \"source_original\": \"string\",\n      \"where_prec\": 2620,\n      \"where_coordinates\": \"string\",\n      \"where_description\": \"string\",\n      \"adm_1\": \"string\",\n      \"adm_2\": \"string\",\n      \"latitude\": 1730.3720622324781,\n      \"longitude\": 6492.694777287893,\n      \"geom_wkt\": \"string\",\n      \"priogrid_gid\": 2276,\n      \"country\": \"string\",\n      \"country_id\": 7990,\n      \"region\": \"string\",\n      \"event_clarity\": 5571,\n      \"date_prec\": 1462,\n      \"date_start\": \"2026-05-09T16:04:06.277Z\",\n      \"date_end\": \"2003-05-03T20:27:49.662Z\",\n      \"deaths_a\": 865,\n      \"deaths_b\": 7335,\n      \"deaths_civilians\": 197,\n      \"deaths_unknown\": 8734,\n      \"best\": 6072,\n      \"high\": 7028,\n      \"low\": 9581,\n      \"gwnoa\": \"string\",\n      \"gwnob\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ucdpapi.pcr.uu.se",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-ucdp-access-token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cd40a5e5-d07f-4343-acab-69e60fe28f06",
+    "name": "UCDP - The Public BattleDeaths GEDEvents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).\n\nContact Support:\n Name: Uppsala Conflict Data Program",
+      "type": "text/plain"
+    }
+  }
+}
