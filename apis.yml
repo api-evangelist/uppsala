@@ -2,15 +2,22 @@
 aid: uppsala
 name: Uppsala University
 description: >-
-  Uppsala University (Uppsala universitet) is Sweden's oldest university,
-  founded in 1477, and is ranked #103 in the QS World University Rankings 2025.
-  Its public developer and API footprint is research-driven and decentralized
-  across departments and infrastructures rather than a single developer portal.
-  Confirmed public interfaces include the Uppsala Conflict Data Program (UCDP)
-  RESTful API, the Norse World REST-API, and the DiVA institutional repository
-  OAI-PMH endpoint. The university maintains an official GitHub organization
-  hosting integration and research code.
+  Uppsala University (Uppsala universitet) is Sweden's oldest university, founded in 1477, and a
+  public research university ranked #103 in the QS World University Rankings 2025. It operates no
+  central developer portal and no institution-wide open-data portal — data.uu.se, opendata.uu.se and
+  api.uu.se do not resolve — so its programmable footprint is decentralized, sitting inside individual
+  research infrastructures, the university library, and IT services. Four surfaces were verified live
+  as institution-operated: the Uppsala Conflict Data Program (UCDP) REST API at ucdpapi.pcr.uu.se,
+  which is the university's most substantial public API and requires a free token; the Norse World
+  REST-API at norseworld.nordiska.uu.se, returning JSON, GeoJSON and JSON-LD; the DiVA OAI-PMH
+  endpoint at uu.diva-portal.org, notable because Uppsala University Library builds and hosts the
+  DiVA platform for the whole Swedish DiVA consortium rather than renting it from a vendor; and the
+  university's SWAMID-registered Shibboleth SAML 2.0 identity provider at weblogin.uu.se, which
+  publishes machine-readable federation metadata. No Figshare, Elsevier Pure, Ex Libris or Dataverse
+  contract is attributed to Uppsala in this profile.
 type: Index
+x-type: university
+x-category: Public Research University
 deliveryModel:
   model: saas
   open_source: false
@@ -41,18 +48,63 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uppsala.png
 url: https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/apis.yml
 tags:
-  - Education
-  - Higher Education
   - University
-  - Research
-  - Open Data
+  - Higher Education
+  - Education
   - Sweden
+  - Public Research University
+  - Research Data
+  - Institutional Repository
+  - Identity Federation
+  - Research Computing
+  - Conflict Data
+  - Open Access
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 specificationVersion: '0.23'
+x-coverage:
+  state: covered
+  reason: covered
+  detail: >-
+    Uppsala operates real, first-party machine-readable surfaces and all of them were reached live.
+    The UCDP API answers 401 without the free x-ucdp-access-token header, which is the documented
+    behaviour and grades live rather than dead. Norse World returns application/json and valid
+    GeoJSON. DiVA answers a full OAI-PMH 2.0 Identify with adminEmail diva-support@ub.uu.se, eight
+    metadata prefixes and eight sets. weblogin.uu.se serves a signed SAML 2.0 EntityDescriptor
+    registered by SWAMID. What Uppsala does NOT have is a central developer portal or an open-data
+    portal: data.uu.se, opendata.uu.se and api.uu.se do not resolve, and the course catalog at
+    uu.se/en/study/course is a human-readable listing with no published API. The /.well-known/
+    security.txt served on uu.se is the SiteVision CMS vendor's boilerplate (contact
+    soc@sitevision.se), not an Uppsala vulnerability-disclosure programme, and is recorded as
+    x-operator vendor so it is not credited to the institution.
+  evidence:
+  - url: https://ucdpapi.pcr.uu.se/api/gedevents/24.1?pagesize=1
+    status: 401
+  - url: https://ucdp.uu.se/apidocs/
+    status: 200
+  - url: https://norseworld.nordiska.uu.se/shared/getLocationAPI.php?format=geojson
+    status: 200
+  - url: https://uu.diva-portal.org/dice/oai?verb=Identify
+    status: 200
+  - url: https://weblogin.uu.se/idp/shibboleth
+    status: 200
+  - url: https://docs.uppmax.uu.se/
+    status: 200
+  - url: https://data.uu.se/
+    status: 0
+  - url: https://api.uu.se/
+    status: 0
+  - url: https://www.uu.se/llms.txt
+    status: 404
+  checked: '2026-08-30'
 apis:
 - aid: uppsala:norseworld
   name: Norse World REST-API
+  x-operator: institution
+  x-operator-evidence: >-
+    Host norseworld.nordiska.uu.se is under the university's own registrable domain uu.se, run by the
+    Department of Scandinavian Languages. Probed 2026-08-30: 200 with Content-Type application/json
+    and a valid GeoJSON FeatureCollection.
   description: >-
     The Norse World REST-API, part of the Norse World research infrastructure at Uppsala University's
     Department of Scandinavian Languages, provides access to attestation and location records of foreign
@@ -72,10 +124,19 @@ apis:
     url: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
 - aid: uppsala:diva-oai
   name: DiVA OAI-PMH
+  x-operator: institution
+  x-operator-evidence: >-
+    diva-portal.org is not a vendor tenancy Uppsala rents — the DiVA platform is developed and hosted
+    by Uppsala University Library for the Swedish DiVA consortium, and the live Identify response
+    names diva-support@ub.uu.se (Uppsala University Library) as adminEmail. Uppsala is the operator
+    here; other Swedish institutions on *.diva-portal.org are the tenants.
   description: >-
     DiVA (Academic Archive On-line) is Uppsala University Library's institutional repository for publications
     and research data produced by the university's researchers and students. It exposes an OAI-PMH 2.0
-    endpoint for harvesting publication metadata (oai_dc and other prefixes).
+    endpoint for harvesting publication metadata. A live Identify on 2026-08-30 returned repositoryName
+    "DiVA - Academic Archive On-line", repositoryIdentifier DiVA.org, granularity YYYY-MM-DDThh:mm:ssZ
+    and deletedRecord persistent; ListMetadataFormats returned oai_dc, oai_etdms, marc21,
+    marc21electronic, swepub_mods, uppsok, gmd and mets_kb.
   humanURL: https://www.uu.se/en/library/publish/diva
   baseURL: https://uu.diva-portal.org/dice/oai
   tags:
@@ -87,8 +148,48 @@ apis:
   properties:
   - type: Documentation
     url: https://www.uu.se/en/library/publish/diva
+  - type: ResearchRepository
+    url: https://uu.diva-portal.org/
+  - type: Conformance
+    url: conformance/uppsala-conformance.yml
+- aid: uppsala:idp-saml
+  name: Uppsala University SAML 2.0 Identity Provider Metadata
+  x-operator: institution
+  x-operator-evidence: >-
+    Host weblogin.uu.se is under the university's own registrable domain. The document served is a
+    SAML 2.0 md:EntityDescriptor with entityID https://weblogin.uu.se/idp/shibboleth, an
+    mdrpi:RegistrationInfo naming registrationAuthority http://www.swamid.se/ (the Swedish research
+    and education federation) with registrationInstant 2013-10-28, and mdui:DisplayName "Uppsala
+    universitet" / "Uppsala University". Probed 2026-08-30, HTTP 200.
+  description: >-
+    Uppsala University runs its own Shibboleth Identity Provider and publishes its SAML 2.0 federation
+    metadata as a machine-readable EntityDescriptor. It is registered in SWAMID, the Swedish identity
+    federation for research and higher education, and therefore reachable through eduGAIN. The document
+    advertises SingleSignOnService over HTTP-POST and HTTP-Redirect, SingleLogoutService over
+    Redirect, POST and SOAP, and ArtifactResolution over SOAP. This is one of the few genuinely
+    institution-operated, machine-readable, standards-conformant surfaces most universities run, and
+    it is almost never catalogued.
+  humanURL: https://weblogin.uu.se/english.html
+  baseURL: https://weblogin.uu.se/idp/
+  tags:
+  - Identity Federation
+  - SAML
+  - Shibboleth
+  - SWAMID
+  - eduGAIN
+  - Single Sign-On
+  properties:
+  - type: IdentityFederation
+    url: https://weblogin.uu.se/idp/shibboleth
+  - type: Conformance
+    url: conformance/uppsala-conformance.yml
 - aid: uppsala:uppsala-battledeaths-api
   name: Uppsala University BattleDeaths API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program at the Department of Peace and Conflict Research. No vendor identity appears in
+    servers[], info.title or info.contact.
   description: The BattleDeaths API from Uppsala University — 1 operation(s) for battledeaths.
   humanURL: https://ucdp.uu.se/apidocs/
   baseURL: https://ucdpapi.pcr.uu.se/api/
@@ -115,6 +216,10 @@ apis:
     url: json-ld/uppsala-context.jsonld
 - aid: uppsala:uppsala-dyadic-api
   name: Uppsala University Dyadic API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program. No vendor identity appears in servers[], info.title or info.contact.
   description: The Dyadic API from Uppsala University — 1 operation(s) for dyadic.
   humanURL: https://ucdp.uu.se/apidocs/
   baseURL: https://ucdpapi.pcr.uu.se/api/
@@ -141,6 +246,10 @@ apis:
     url: json-ld/uppsala-context.jsonld
 - aid: uppsala:uppsala-gedevents-api
   name: Uppsala University GEDEvents API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program. No vendor identity appears in servers[], info.title or info.contact.
   description: The GEDEvents API from Uppsala University — 1 operation(s) for gedevents.
   humanURL: https://ucdp.uu.se/apidocs/
   baseURL: https://ucdpapi.pcr.uu.se/api/
@@ -167,6 +276,10 @@ apis:
     url: json-ld/uppsala-context.jsonld
 - aid: uppsala:uppsala-nonstate-api
   name: Uppsala University NonState API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program. No vendor identity appears in servers[], info.title or info.contact.
   description: The NonState API from Uppsala University — 1 operation(s) for nonstate.
   humanURL: https://ucdp.uu.se/apidocs/
   baseURL: https://ucdpapi.pcr.uu.se/api/
@@ -193,6 +306,10 @@ apis:
     url: json-ld/uppsala-context.jsonld
 - aid: uppsala:uppsala-onesided-api
   name: Uppsala University OneSided API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program. No vendor identity appears in servers[], info.title or info.contact.
   description: The OneSided API from Uppsala University — 1 operation(s) for onesided.
   humanURL: https://ucdp.uu.se/apidocs/
   baseURL: https://ucdpapi.pcr.uu.se/api/
@@ -219,6 +336,10 @@ apis:
     url: json-ld/uppsala-context.jsonld
 - aid: uppsala:uppsala-organizedviolencecy-api
   name: Uppsala University OrganizedViolenceCY API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program. No vendor identity appears in servers[], info.title or info.contact.
   description: >-
     The OrganizedViolenceCY API from Uppsala University — 1 operation(s) for organizedviolencecy.
   humanURL: https://ucdp.uu.se/apidocs/
@@ -246,6 +367,10 @@ apis:
     url: json-ld/uppsala-context.jsonld
 - aid: uppsala:uppsala-ucdpprioconflict-api
   name: Uppsala University UcdpPrioConflict API
+  x-operator: institution
+  x-operator-evidence: >-
+    ucdpapi.pcr.uu.se is under uu.se; the source contract's info.contact names the Uppsala Conflict
+    Data Program. No vendor identity appears in servers[], info.title or info.contact.
   description: The UcdpPrioConflict API from Uppsala University — 1 operation(s) for ucdpprioconflict.
   humanURL: https://ucdp.uu.se/apidocs/
   baseURL: https://ucdpapi.pcr.uu.se/api/
@@ -259,11 +384,11 @@ apis:
   - type: Authentication
     url: https://ucdp.uu.se/apidocs/
   - type: JSONSchema
-    url: json-schema/uppsala-gedevent-schema.json
+    url: json-schema/uppsala-ucdpprioconflict-schema.json
   - type: JSONStructure
-    url: json-structure/uppsala-gedevent-structure.json
+    url: json-structure/uppsala-ucdpprioconflict-structure.json
   - type: Examples
-    url: examples/uppsala-gedevents-example.json
+    url: examples/uppsala-ucdpprioconflict-example.json
   - type: Rules
     url: rules/uppsala-rules.yml
   - type: Vocabulary
@@ -271,6 +396,36 @@ apis:
   - type: JSONLD
     url: json-ld/uppsala-context.jsonld
 common:
+  - type: Website
+    url: https://www.uu.se/
+  - type: Documentation
+    url: https://ucdp.uu.se/apidocs/
+  - type: APIReference
+    url: https://ucdp.uu.se/apidocs/
+  - type: ResearchRepository
+    url: https://uu.diva-portal.org/
+  - type: IdentityFederation
+    url: https://weblogin.uu.se/idp/shibboleth
+  - type: ResearchComputing
+    url: https://docs.uppmax.uu.se/
+  - type: CourseCatalog
+    url: https://www.uu.se/en/study/course
+  - type: AITooling
+    url: https://www.uu.se/en/staff/service-and-tools/ai
+  - type: PrivacyPolicy
+    url: https://www.uu.se/en/about-uu/data-protection-policy
+  - type: Support
+    url: https://www.uu.se/en/contact-and-organisation
+  - type: Blog
+    url: https://www.uu.se/en/news
+  - type: GitHub
+    url: https://github.com/uppsala-university
+  - type: GitHubOrganization
+    url: https://github.com/UppsalaConflictDataProgram
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/uppsala-university/
+  - type: Conformance
+    url: conformance/uppsala-conformance.yml
   - type: AgenticAccess
     url: agentic-access/uppsala-agentic-access.yml
   - type: VulnerabilityDisclosure
@@ -279,12 +434,6 @@ common:
     url: security/uppsala-domain-security.yml
   - type: Authentication
     url: authentication/uppsala-authentication.yml
-  - type: Website
-    url: https://www.uu.se/
-  - type: GitHub
-    url: https://github.com/uppsala-university
-  - type: LinkedIn
-    url: https://www.linkedin.com/school/uppsala-university/
   - type: Plans
     url: plans/uppsala-plans-pricing.yml
   - type: RateLimits

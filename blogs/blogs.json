@@ -1,0 +1,14 @@
+{
+  "repo": "uppsala",
+  "feeds": [
+    {
+      "source": "https://www.uu.se/en/contact-and-organisation",
+      "feed_url": "https://www.uu.se/en/contact-and-organisation",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-30T22:33:40Z"
+}
