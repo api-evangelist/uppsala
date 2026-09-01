@@ -1,18 +1,20 @@
 ---
 kin_checks:
   slug: uppsala
-  schema_version: 0.16.0
-  scored_at: '2026-08-29'
-  run_ts: 2026-08-29T230545
+  schema_version: 0.17.2
+  scored_at: '2026-09-01'
+  run_ts: 2026-09-01T063623
   note: Actionable checks only (missed + partial). earned/na are every other check
-    in rubric/scoring-0.16.0.yml; counts below let you verify that.
+    in rubric/scoring-0.17.2.yml; counts below let you verify that.
   counts:
     total: 130
-    earned: 37
-    partial: 8
-    missed: 59
+    earned: 44
+    partial: 9
+    missed: 51
     na: 26
   checks:
+  - id: multiple_apis
+    status: missed
   - id: well_known_published
     status: missed
   - id: llms_txt_published
@@ -53,15 +55,11 @@ kin_checks:
     status: missed
   - id: domain_standard_conformance
     status: missed
-  - id: conformance_declared
-    status: missed
   - id: overlay_published
     status: missed
   - id: change_log_present
     status: missed
   - id: status_page_present
-    status: missed
-  - id: rate_limits_rich
     status: missed
   - id: deprecation_policy
     status: missed
@@ -72,8 +70,6 @@ kin_checks:
   - id: roadmap_present
     status: missed
   - id: portal_present
-    status: missed
-  - id: api_reference_present
     status: missed
   - id: getting_started_present
     status: missed
@@ -89,19 +85,11 @@ kin_checks:
     status: missed
   - id: agent_skill_present
     status: missed
-  - id: support_channel
-    status: missed
-  - id: blog_present
-    status: missed
-  - id: plans_multiple
-    status: missed
   - id: pricing_link
     status: missed
   - id: sign_up_present
     status: missed
   - id: terms_of_service
-    status: missed
-  - id: privacy_policy
     status: missed
   - id: compliance_published
     status: missed
@@ -111,11 +99,7 @@ kin_checks:
     status: missed
   - id: reg_terms_of_service
     status: missed
-  - id: reg_privacy_policy
-    status: missed
   - id: reg_compliance_published
-    status: missed
-  - id: reg_named_standard_conformance
     status: missed
   - id: mcp_server
     status: missed
@@ -151,6 +135,10 @@ kin_checks:
   - id: balanced_severities
     status: partial
     earned: 0.75
+  - id: github_org_present
+    status: partial
+    earned: 1.0
+    detail: pointer liveness 0.5
   - id: agentic_access
     status: partial
     earned: 2.5
