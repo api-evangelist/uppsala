@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths GEDEvents API
+  title: UCDP - The Public GED Events API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -81,205 +81,263 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/GedDbAPIResponse'
+      summary: Get api ged events by version
+      x-summary-source: derived
+      operationId: getApiGEDEventsByVersion
+      x-operation-id-source: derived
 components:
   schemas:
-    GedDbAPIResponse:
-      type: object
-      properties:
-        TotalCount:
-          type: integer
-          format: int32
-          nullable: true
-        TotalPages:
-          type: integer
-          format: int32
-          nullable: true
-        PreviousPageUrl:
-          type: string
-          nullable: true
-        NextPageUrl:
-          type: string
-          nullable: true
-        Result:
-          type: array
-          items:
-            $ref: '#/components/schemas/GedDb'
-          nullable: true
-      additionalProperties: false
     GedDb:
       type: object
       properties:
         id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         relid:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         year:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         active_year:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         code_status:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         type_of_violence:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         conflict_dset_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         conflict_new_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         conflict_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         dyad_dset_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         dyad_new_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         dyad_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_dset_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_new_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         side_a:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_dset_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_new_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         side_b:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         number_of_sources:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         source_article:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         source_office:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         source_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         source_headline:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         source_original:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         where_prec:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         where_coordinates:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         where_description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         adm_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         adm_2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         latitude:
-          type: number
+          type:
+          - number
+          - 'null'
           format: double
-          nullable: true
         longitude:
-          type: number
+          type:
+          - number
+          - 'null'
           format: double
-          nullable: true
         geom_wkt:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         priogrid_gid:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         region:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         event_clarity:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         date_prec:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         date_start:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         date_end:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         deaths_a:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         deaths_b:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         deaths_civilians:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         deaths_unknown:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         gwnoa:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwnob:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GedDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalPages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreviousPageUrl:
+          type:
+          - string
+          - 'null'
+        NextPageUrl:
+          type:
+          - string
+          - 'null'
+        Result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GedDb'
       additionalProperties: false
   securitySchemes:
     ApiToken:

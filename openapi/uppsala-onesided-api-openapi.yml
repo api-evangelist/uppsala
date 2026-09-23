@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths OneSided API
+  title: UCDP - The Public One Sided API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -61,90 +61,116 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/OneSidedDbAPIResponse'
+      summary: Get api one sided by version
+      x-summary-source: derived
+      operationId: getApiOneSidedByVersion
+      x-operation-id-source: derived
 components:
   schemas:
     OneSidedDb:
       type: object
       properties:
         conflict_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         dyad_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         actor_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         coalition_components:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         actor_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         actor_name_fulltext:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         actor_name_mothertongue:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         year:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         best_fatality_estimate:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         low_fatality_estimate:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         high_fatality_estimate:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         is_government_actor:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         location:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_location:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwnoa:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         region:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         version:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     OneSidedDbAPIResponse:
       type: object
       properties:
         TotalCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         TotalPages:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         PreviousPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         NextPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Result:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/OneSidedDb'
-          nullable: true
       additionalProperties: false
   securitySchemes:
     ApiToken:

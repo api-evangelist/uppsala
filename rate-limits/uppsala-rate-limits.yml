@@ -4,32 +4,75 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Uppsala University
 providerId: uppsala
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
+generated: '2026-08-30'
+method: searched
 reconciled: false
 tags:
-- Education
-- Higher Education
 - University
+- Higher Education
+- Education
 - Rate Limiting
 description: >-
-  Uppsala University does not publish a unified public rate-limit table across its APIs. Open
-  metadata and harvesting endpoints (OAI-PMH, IIIF, library) may throttle large-scale
-  or automated harvesting; clients should harvest politely, honor Retry-After, and
-  contact the relevant service for bulk access.
-notes: Confirm per-service limits with each API's documentation; harvest responsibly.
+  Uppsala University publishes no single institution-wide rate-limit table, but one of its APIs
+  does publish an explicit, numeric quota. The UCDP Public API documents a hard limit of 5,000
+  requests per day per access token, with failed requests counting against that limit. The Norse
+  World REST-API and the DiVA OAI-PMH endpoint publish no numeric limit; harvest politely and
+  honour Retry-After.
+notes: >-
+  The UCDP figure is quoted verbatim from the provider's own documentation page, read live on
+  2026-08-30 ("Access Quotas and Restrictions — Usage is governed by the following limit: 5,000
+  requests per day. Errors count towards the limit."). No published limit was found for any other
+  Uppsala surface; those entries state the absence rather than guessing a number.
 sources:
-- https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/apis.yml
+- https://ucdp.uu.se/apidocs/
+- openapi/_original/uppsala-ucdp.yaml
+- https://uu.diva-portal.org/dice/oai?verb=Identify
 responseCodes:
   throttled: 429
+  unauthenticated: 401
 limits:
-- name: Default
+- name: UCDP Public API daily quota
+  api: uppsala:uppsala-gedevents-api
+  scope: access-token
+  metric: requests-per-day
+  limit: 5000
+  enforced: true
+  method: searched
+  source: https://ucdp.uu.se/apidocs/
+  notes: >-
+    Per free access token, issued by the UCDP maintainers after review of a stated research use
+    (3-5 working days). Errors count towards the limit. The token is sent in the
+    x-ucdp-access-token header; requests without it return 401.
+- name: Norse World REST-API
+  api: uppsala:norseworld
   scope: client
-  metric: requests-per-minute
-  limit: see service documentation
-  notes: No published global limit; large harvests may be rate-limited.
+  metric: unspecified
+  limit: none published
+  enforced: unknown
+  method: probed
+  source: https://www.uu.se/en/research/norseworld/infrastructure/rest-api
+  notes: >-
+    No quota, key or throttle is documented and the endpoints answer anonymously (HTTP 200,
+    application/json). Absence of a published limit is not permission to hammer it.
+- name: DiVA OAI-PMH harvesting
+  api: uppsala:diva-oai
+  scope: client
+  metric: unspecified
+  limit: none published
+  enforced: unknown
+  method: probed
+  source: https://uu.diva-portal.org/dice/oai?verb=Identify
+  notes: >-
+    No numeric limit is advertised in the Identify response. OAI-PMH resumption tokens pace bulk
+    harvests; harvest incrementally with from/until rather than re-harvesting the full set.
 policies:
+- name: Token required
+  description: >-
+    UCDP access is gated by a free, manually reviewed token in the x-ucdp-access-token header.
+    Tokens can be revoked or reissued on request to the API maintainer.
 - name: Backoff Strategy
-  description: Exponential backoff with jitter; honor Retry-After; harvest during off-peak hours.
+  description: Exponential backoff with jitter; honour Retry-After; harvest during off-peak hours.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

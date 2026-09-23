@@ -1,13 +1,7 @@
 {
   "provider": "uppsala",
   "sources": [
-    "uppsala-battledeaths-api-openapi.yml",
-    "uppsala-dyadic-api-openapi.yml",
-    "uppsala-gedevents-api-openapi.yml",
-    "uppsala-nonstate-api-openapi.yml",
-    "uppsala-onesided-api-openapi.yml",
-    "uppsala-organizedviolencecy-api-openapi.yml",
-    "uppsala-ucdpprioconflict-api-openapi.yml"
+    "_original/uppsala-ucdp.yaml"
   ],
   "outputs": [
     "uppsala-battledeaths-api-openapi.yml",
@@ -21,6 +15,25 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "uppsala-ucdp.yaml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "uppsala-ucdp.yaml: declared missing tag: BattleDeaths",
+    "uppsala-ucdp.yaml: declared missing tag: Dyadic",
+    "uppsala-ucdp.yaml: declared missing tag: GEDEvents",
+    "uppsala-ucdp.yaml: declared missing tag: NonState",
+    "uppsala-ucdp.yaml: declared missing tag: OneSided",
+    "uppsala-ucdp.yaml: declared missing tag: OrganizedViolenceCY",
+    "uppsala-ucdp.yaml: declared missing tag: UcdpPrioConflict",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "uppsala-battledeaths-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "uppsala-dyadic-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "uppsala-gedevents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "uppsala-nonstate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "uppsala-onesided-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "uppsala-organizedviolencecy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "uppsala-ucdpprioconflict-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

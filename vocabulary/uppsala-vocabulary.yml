@@ -1,4 +1,11 @@
 ---
+generated: '2026-08-30'
+method: derived
+source: openapi/_original/uppsala-ucdp.yaml
+x-operator: institution
+note: >-
+  Derived by API Evangelist from Uppsala University's own UCDP OpenAPI description. Uppsala
+  University does not publish this vocabulary; the terms it names are theirs, the document is ours.
 vocabulary:
   name: Uppsala UCDP Conflict Data Vocabulary
   description: >-

@@ -1,0 +1,102 @@
+generated: '2026-08-30'
+method: probed
+source: >-
+  Live probes of Uppsala University's own hosts on 2026-08-30, plus openapi/_original/uppsala-ucdp.yaml.
+  Conformance targets are the Kin Score `education` regulatory regime standards[] list.
+regime: education
+note: >-
+  Reward-only. Every entry marked conforms: true below is backed by a fetched document from a host
+  under uu.se or from uu.diva-portal.org, whose Identify response names Uppsala University Library.
+  Standards with no evidence are recorded as conforms: false with the negative probe that established
+  it — they are NOT scored against the institution, they are recorded so a later run does not have to
+  re-derive the absence.
+standards:
+- id: oai-pmh
+  conforms: true
+  evidence: >-
+    https://uu.diva-portal.org/dice/oai?verb=Identify returned HTTP 200 with a well-formed
+    OAI-PMH 2.0 response: protocolVersion 2.0, repositoryName "DiVA - Academic Archive On-line",
+    repositoryIdentifier DiVA.org, adminEmail diva-support@ub.uu.se, granularity
+    YYYY-MM-DDThh:mm:ssZ, deletedRecord persistent, earliestDatestamp 1900-01-01T00:00:00Z.
+    verb=ListMetadataFormats returned eight prefixes (oai_dc, oai_etdms, marc21, marc21electronic,
+    swepub_mods, uppsok, gmd, mets_kb); verb=ListSets returned eight subject sets; and
+    verb=ListRecords&metadataPrefix=oai_dc&set=Technology returned a 330 KB record page.
+  location: https://uu.diva-portal.org/dice/oai
+- id: saml
+  conforms: true
+  evidence: >-
+    https://weblogin.uu.se/idp/shibboleth returned HTTP 200 with a SAML 2.0
+    md:EntityDescriptor (xmlns:md urn:oasis:names:tc:SAML:2.0:metadata), entityID
+    https://weblogin.uu.se/idp/shibboleth, advertising SingleSignOnService over
+    urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST and HTTP-Redirect, SingleLogoutService over
+    Redirect, POST and SOAP, and ArtifactResolution over SOAP on port 8443.
+  location: https://weblogin.uu.se/idp/shibboleth
+- id: shibboleth
+  conforms: true
+  evidence: >-
+    The same EntityDescriptor carries the Shibboleth metadata extension namespace
+    xmlns:shibmd urn:mace:shibboleth:metadata:1.0 and is served from the canonical Shibboleth IdP
+    path /idp/shibboleth, i.e. the deployment is a Shibboleth Identity Provider, not a generic SAML
+    endpoint. It is registered by SWAMID (mdrpi:RegistrationInfo registrationAuthority
+    http://www.swamid.se/, registrationInstant 2013-10-28T12:07:42Z, RegistrationPolicy
+    http://swamid.se/policy/mdrps) and therefore also reachable via eduGAIN.
+  location: https://weblogin.uu.se/idp/shibboleth
+- id: orcid
+  conforms: false
+  evidence: >-
+    No ORCID identifier appeared in a harvested DiVA page. verb=ListRecords with metadataPrefix
+    swepub_mods (664 KB) and with oai_dc (330 KB), set=Technology, contained no case-insensitive
+    match for "orcid".
+- id: datacite
+  conforms: false
+  evidence: >-
+    verb=ListMetadataFormats on the DiVA endpoint offers no oai_datacite / datacite prefix; the
+    eight available prefixes are oai_dc, oai_etdms, marc21, marc21electronic, swepub_mods, uppsok,
+    gmd and mets_kb.
+- id: crossref
+  conforms: false
+  evidence: No Crossref deposit or Crossref-format surface was found on any uu.se host.
+- id: scim
+  conforms: false
+  evidence: >-
+    No /scim/v2 or ServiceProviderConfig surface is published on any Uppsala host; identity is
+    exposed through SAML federation, not SCIM provisioning.
+- id: lti
+  conforms: false
+  evidence: No public LTI tool or platform registration surface was found on a uu.se host.
+- id: oneroster
+  conforms: false
+  evidence: No OneRoster endpoint was found; Uppsala's student records run in the national Ladok system.
+- id: ed-fi
+  conforms: false
+  evidence: Ed-Fi is a US K-12/state-agency data standard and is not used by Swedish higher education.
+- id: caliper
+  conforms: false
+  evidence: No Caliper Analytics event store or endpoint was found on a uu.se host.
+- id: qti
+  conforms: false
+  evidence: No QTI assessment interchange surface was found on a uu.se host.
+other:
+- id: openapi-3.x
+  conforms: true
+  evidence: >-
+    openapi/_original/uppsala-ucdp.yaml is a valid OpenAPI document titled "UCDP - The Public API"
+    with contact "Uppsala Conflict Data Program" (https://ucdp.uu.se/apidocs/), covering seven
+    GET operations across the UCDP conflict datasets.
+  location: openapi/_original/uppsala-ucdp.yaml
+- id: geojson
+  conforms: true
+  evidence: >-
+    https://norseworld.nordiska.uu.se/shared/getLocationAPI.php?format=geojson returned HTTP 200
+    with a GeoJSON FeatureCollection — Feature objects with geometry type Point and a properties
+    object carrying place-name attributes and a GeoNames link.
+  location: https://norseworld.nordiska.uu.se/shared/getLocationAPI.php
+- id: rfc9116-security-txt
+  conforms: partial
+  x-operator: vendor
+  evidence: >-
+    https://uu.se/.well-known/security.txt returns HTTP 200, but the document is the SiteVision CMS
+    vendor's boilerplate — Contact mailto:soc@sitevision.se, Encryption
+    https://sitevision.net/security-soc-pgp. It is served under the university's domain but it is
+    NOT an Uppsala University vulnerability-disclosure programme and must not be credited as one.
+  location: https://uu.se/.well-known/security.txt

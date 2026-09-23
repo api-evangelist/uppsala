@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths UcdpPrioConflict API
+  title: UCDP - The Public Ucdp Prio Conflict API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -69,118 +69,155 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/UcdpPrioConflictDbAPIResponse'
+      summary: Get api ucdp prio conflict by version
+      x-summary-source: derived
+      operationId: getApiUcdpPrioConflictByVersion
+      x-operation-id-source: derived
 components:
   schemas:
-    UcdpPrioConflictDb:
-      type: object
-      properties:
-        conflict_id:
-          type: string
-          nullable: true
-        location:
-          type: string
-          nullable: true
-        side_a:
-          type: string
-          nullable: true
-        side_a_Id:
-          type: string
-          nullable: true
-        side_a_2nd:
-          type: string
-          nullable: true
-        side_b:
-          type: string
-          nullable: true
-        side_b_Id:
-          type: string
-          nullable: true
-        side_b_2nd:
-          type: string
-          nullable: true
-        incompatibility:
-          type: string
-          nullable: true
-        territory_name:
-          type: string
-          nullable: true
-        year:
-          type: string
-          nullable: true
-        intensity_level:
-          type: string
-          nullable: true
-        cumulative_intensity:
-          type: string
-          nullable: true
-        type_of_conflict:
-          type: string
-          nullable: true
-        start_date:
-          type: string
-          nullable: true
-        start_prec:
-          type: string
-          nullable: true
-        start_date2:
-          type: string
-          nullable: true
-        start_prec2:
-          type: string
-          nullable: true
-        ep_end:
-          type: string
-          nullable: true
-        ep_end_date:
-          type: string
-          nullable: true
-        ep_end_prec:
-          type: string
-          nullable: true
-        gwno_a:
-          type: string
-          nullable: true
-        gwno_a_2nd:
-          type: string
-          nullable: true
-        gwno_b:
-          type: string
-          nullable: true
-        gwno_b_2nd:
-          type: string
-          nullable: true
-        gwno_loc:
-          type: string
-          nullable: true
-        region:
-          type: string
-          nullable: true
-        version:
-          type: string
-          nullable: true
-      additionalProperties: false
     UcdpPrioConflictDbAPIResponse:
       type: object
       properties:
         TotalCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         TotalPages:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         PreviousPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         NextPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Result:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/UcdpPrioConflictDb'
-          nullable: true
+      additionalProperties: false
+    UcdpPrioConflictDb:
+      type: object
+      properties:
+        conflict_id:
+          type:
+          - string
+          - 'null'
+        location:
+          type:
+          - string
+          - 'null'
+        side_a:
+          type:
+          - string
+          - 'null'
+        side_a_Id:
+          type:
+          - string
+          - 'null'
+        side_a_2nd:
+          type:
+          - string
+          - 'null'
+        side_b:
+          type:
+          - string
+          - 'null'
+        side_b_Id:
+          type:
+          - string
+          - 'null'
+        side_b_2nd:
+          type:
+          - string
+          - 'null'
+        incompatibility:
+          type:
+          - string
+          - 'null'
+        territory_name:
+          type:
+          - string
+          - 'null'
+        year:
+          type:
+          - string
+          - 'null'
+        intensity_level:
+          type:
+          - string
+          - 'null'
+        cumulative_intensity:
+          type:
+          - string
+          - 'null'
+        type_of_conflict:
+          type:
+          - string
+          - 'null'
+        start_date:
+          type:
+          - string
+          - 'null'
+        start_prec:
+          type:
+          - string
+          - 'null'
+        start_date2:
+          type:
+          - string
+          - 'null'
+        start_prec2:
+          type:
+          - string
+          - 'null'
+        ep_end:
+          type:
+          - string
+          - 'null'
+        ep_end_date:
+          type:
+          - string
+          - 'null'
+        ep_end_prec:
+          type:
+          - string
+          - 'null'
+        gwno_a:
+          type:
+          - string
+          - 'null'
+        gwno_a_2nd:
+          type:
+          - string
+          - 'null'
+        gwno_b:
+          type:
+          - string
+          - 'null'
+        gwno_b_2nd:
+          type:
+          - string
+          - 'null'
+        gwno_loc:
+          type:
+          - string
+          - 'null'
+        region:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     ApiToken:

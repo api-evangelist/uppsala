@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths Dyadic API
+  title: UCDP - The Public Dyadic API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -73,109 +73,143 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/DyadicDbAPIResponse'
+      summary: Get api dyadic by version
+      x-summary-source: derived
+      operationId: getApiDyadicByVersion
+      x-operation-id-source: derived
 components:
   schemas:
     DyadicDbAPIResponse:
       type: object
       properties:
         TotalCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         TotalPages:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         PreviousPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         NextPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Result:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/DyadicDb'
-          nullable: true
       additionalProperties: false
     DyadicDb:
       type: object
       properties:
         dyad_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         conflict_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         location:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         incompatibility:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         territory_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         year:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         intensity_level:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         type_of_conflict:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_prec:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_date2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_prec2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_a:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_a_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_b:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_b_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_loc:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         region:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         version:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     ApiToken:

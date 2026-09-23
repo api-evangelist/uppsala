@@ -1,4 +1,9 @@
 {
+  "x-generated": "2026-08-30",
+  "x-method": "generated",
+  "x-source": "openapi/_original/uppsala-ucdp.yaml",
+  "x-operator": "institution",
+  "x-provenance-note": "Provenance stamp added by the API Evangelist university pipeline. This artifact was produced by API Evangelist from Uppsala University's own UCDP OpenAPI description; it was NOT published by Uppsala University.",
   "request": {
     "method": "GET",
     "url": "https://ucdpapi.pcr.uu.se/api/gedevents/25.1?pagesize=1&page=0",
@@ -43,7 +48,7 @@
         "adm_1": "Somali region",
         "adm_2": "Degehabur zone",
         "latitude": 8.21972,
-        "longitude": 43.56750,
+        "longitude": 43.5675,
         "geom_wkt": "POINT (43.56750 8.21972)",
         "priogrid_gid": 143263,
         "country": "Ethiopia",

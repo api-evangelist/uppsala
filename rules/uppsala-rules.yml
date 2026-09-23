@@ -1,4 +1,9 @@
 ---
+# generated: 2026-08-30
+# method: derived
+# x-source-url: openapi/_original/uppsala-ucdp.yaml
+# x-operator: institution
+# Written by API Evangelist from Uppsala's own UCDP OpenAPI. Uppsala does not publish this ruleset.
 # Spectral ruleset encoding observed patterns in the UCDP Public API.
 # Patterns are derived from the real OpenAPI 3.0 description at
 # https://ucdpapi.pcr.uu.se/swagger/v1/swagger.json

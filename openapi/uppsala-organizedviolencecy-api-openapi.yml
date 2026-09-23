@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths OrganizedViolenceCY API
+  title: UCDP - The Public Organized Violence CY API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -89,316 +89,399 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/OrganizedViolenceCYDbAPIResponse'
+      summary: Get api organizedviolencecy by version
+      x-summary-source: derived
+      operationId: getApiOrganizedviolencecyByVersion
+      x-operation-id-source: derived
 components:
   schemas:
-    OrganizedViolenceCYDbAPIResponse:
-      type: object
-      properties:
-        TotalCount:
-          type: integer
-          format: int32
-          nullable: true
-        TotalPages:
-          type: integer
-          format: int32
-          nullable: true
-        PreviousPageUrl:
-          type: string
-          nullable: true
-        NextPageUrl:
-          type: string
-          nullable: true
-        Result:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrganizedViolenceCYDb'
-          nullable: true
-      additionalProperties: false
     OrganizedViolenceCYDb:
       type: object
       properties:
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         year:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         region:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         govt_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_exist:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_dyad_count:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_dyad_ids:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_dyad_names:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_deaths_parties:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_deaths_civilians:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_deaths_unknown:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_total_deaths_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_total_deaths_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_total_deaths_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_exist:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_dyad_count:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_dyad_ids:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_intrastate_dyad_names:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_intrastate_govt_inv_incomp:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_deaths_parties:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_deaths_civilians:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_deaths_unknown:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_deaths_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_deaths_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_intrastate_deaths_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_exist:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_dyad_count:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_dyad_ids:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_interstate_dyad_names:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         sb_interstate_govt_inv_incomp:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_deaths_parties:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_deaths_civilians:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_deaths_unknown:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_deaths_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_deaths_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         sb_interstate_deaths_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_exist:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_dyad_count:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_dyad_ids:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ns_dyad_names:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ns_deaths_parties:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_deaths_civilians:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_deaths_unknown:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_total_deaths_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_total_deaths_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ns_total_deaths_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_exist:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_dyad_count:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_dyad_ids:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         os_dyad_names:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         os_govt_inv:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_govt_killings_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_govt_killings_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_govt_killings_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_any_govt_inv:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_any_govt_killings_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_any_govt_killings_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_any_govt_killings_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_nsgroup_inv:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_nsgroup_killings_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_nsgroup_killings_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_nsgroup_killings_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_killings_unknown:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_total_deaths_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_total_deaths_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         os_total_deaths_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         cumulative_total_deaths_parties_in_orgvio:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         cumulative_total_deaths_civilians_in_orgvio:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         cumulative_total_deaths_unknown_in_orgvio:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         cumulative_total_deaths_in_orgvio_best:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         cumulative_total_deaths_in_orgvio_high:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         cumulative_total_deaths_in_orgvio_low:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         Version:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OrganizedViolenceCYDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalPages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreviousPageUrl:
+          type:
+          - string
+          - 'null'
+        NextPageUrl:
+          type:
+          - string
+          - 'null'
+        Result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OrganizedViolenceCYDb'
       additionalProperties: false
   securitySchemes:
     ApiToken:

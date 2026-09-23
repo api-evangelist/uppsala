@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths API
+  title: UCDP - The Public Battle Deaths API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -73,109 +73,143 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BattleDeathsDbAPIResponse'
+      summary: Get api battle deaths by version
+      x-summary-source: derived
+      operationId: getApiBattleDeathsByVersion
+      x-operation-id-source: derived
 components:
   schemas:
-    BattleDeathsDb:
-      type: object
-      properties:
-        conflict_id:
-          type: string
-          nullable: true
-        dyad_id:
-          type: string
-          nullable: true
-        location_inc:
-          type: string
-          nullable: true
-        side_a:
-          type: string
-          nullable: true
-        side_a_id:
-          type: string
-          nullable: true
-        side_a_2nd:
-          type: string
-          nullable: true
-        side_b:
-          type: string
-          nullable: true
-        side_b_Id:
-          type: string
-          nullable: true
-        side_b_2nd:
-          type: string
-          nullable: true
-        incompatibility:
-          type: string
-          nullable: true
-        territory_name:
-          type: string
-          nullable: true
-        year:
-          type: string
-          nullable: true
-        bd_best:
-          type: string
-          nullable: true
-        bd_low:
-          type: string
-          nullable: true
-        bd_high:
-          type: string
-          nullable: true
-        type_of_conflict:
-          type: string
-          nullable: true
-        battle_location:
-          type: string
-          nullable: true
-        gwno_a:
-          type: string
-          nullable: true
-        gwno_a_2nd:
-          type: string
-          nullable: true
-        gwno_b:
-          type: string
-          nullable: true
-        gwno_b_2nd:
-          type: string
-          nullable: true
-        gwno_loc:
-          type: string
-          nullable: true
-        gwno_battle:
-          type: string
-          nullable: true
-        region:
-          type: string
-          nullable: true
-        version:
-          type: string
-          nullable: true
-      additionalProperties: false
     BattleDeathsDbAPIResponse:
       type: object
       properties:
         TotalCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         TotalPages:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         PreviousPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         NextPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Result:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BattleDeathsDb'
-          nullable: true
+      additionalProperties: false
+    BattleDeathsDb:
+      type: object
+      properties:
+        conflict_id:
+          type:
+          - string
+          - 'null'
+        dyad_id:
+          type:
+          - string
+          - 'null'
+        location_inc:
+          type:
+          - string
+          - 'null'
+        side_a:
+          type:
+          - string
+          - 'null'
+        side_a_id:
+          type:
+          - string
+          - 'null'
+        side_a_2nd:
+          type:
+          - string
+          - 'null'
+        side_b:
+          type:
+          - string
+          - 'null'
+        side_b_Id:
+          type:
+          - string
+          - 'null'
+        side_b_2nd:
+          type:
+          - string
+          - 'null'
+        incompatibility:
+          type:
+          - string
+          - 'null'
+        territory_name:
+          type:
+          - string
+          - 'null'
+        year:
+          type:
+          - string
+          - 'null'
+        bd_best:
+          type:
+          - string
+          - 'null'
+        bd_low:
+          type:
+          - string
+          - 'null'
+        bd_high:
+          type:
+          - string
+          - 'null'
+        type_of_conflict:
+          type:
+          - string
+          - 'null'
+        battle_location:
+          type:
+          - string
+          - 'null'
+        gwno_a:
+          type:
+          - string
+          - 'null'
+        gwno_a_2nd:
+          type:
+          - string
+          - 'null'
+        gwno_b:
+          type:
+          - string
+          - 'null'
+        gwno_b_2nd:
+          type:
+          - string
+          - 'null'
+        gwno_loc:
+          type:
+          - string
+          - 'null'
+        gwno_battle:
+          type:
+          - string
+          - 'null'
+        region:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     ApiToken:

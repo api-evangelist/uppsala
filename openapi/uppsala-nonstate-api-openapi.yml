@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: UCDP - The Public BattleDeaths NonState API
+  title: UCDP - The Public Non State API
   description: 'Uppsala Conflict Data Program (UCDP) RESTful HTTP API returning JSON for UCDP conflict datasets: georeferenced events, UCDP/PRIO armed conflict, dyadic, non-state, one-sided violence, battle-related deaths, and organized violence country-year. Access requires a free token supplied in the x-ucdp-access-token header (quota 5,000 requests/day).'
   version: '1.0'
   contact:
@@ -65,130 +65,171 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/NonStateDbAPIResponse'
+      summary: Get api non state by version
+      x-summary-source: derived
+      operationId: getApiNonStateByVersion
+      x-operation-id-source: derived
 components:
   schemas:
     NonStateDb:
       type: object
       properties:
         conflict_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         dyad_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         org:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_name_fulltext:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_name_mothertongue:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_components:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_a_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_a_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_name_fulltext:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_name_mothertongue:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_components:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         side_b_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_b_2nd:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_prec:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_date2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         start_prec2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ep_end:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ep_end_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ep_end_prec:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         year:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         best_fatality_estimate:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         low_fatality_estimate:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         high_fatality_estimate:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         location:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         gwno_location:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         region:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         version:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     NonStateDbAPIResponse:
       type: object
       properties:
         TotalCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         TotalPages:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         PreviousPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         NextPageUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Result:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/NonStateDb'
-          nullable: true
       additionalProperties: false
   securitySchemes:
     ApiToken:

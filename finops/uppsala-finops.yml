@@ -4,7 +4,9 @@ schema: https://www.finops.org/framework/
 provider: Uppsala University
 providerId: uppsala
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
+generated: '2026-08-30'
+method: generated
 reconciled: false
 tags:
 - Education

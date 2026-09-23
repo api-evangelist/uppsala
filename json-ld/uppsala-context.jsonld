@@ -6,17 +6,14 @@
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "dcterms": "http://purl.org/dc/terms/",
     "@vocab": "https://ucdp.uu.se/vocab#",
-
     "University": "schema:CollegeOrUniversity",
     "name": "schema:name",
     "url": "schema:url",
     "description": "schema:description",
     "founder": "schema:foundingDate",
-
     "GedEvent": "ucdp:GeoreferencedEvent",
     "Conflict": "ucdp:ArmedConflict",
     "Dyad": "ucdp:Dyad",
-
     "id": "schema:identifier",
     "relid": "ucdp:relationId",
     "year": "dcterms:date",
@@ -52,6 +49,11 @@
     "source_headline": "schema:headline",
     "version": "schema:version"
   },
+  "x-generated": "2026-08-30",
+  "x-method": "generated",
+  "x-source": "openapi/_original/uppsala-ucdp.yaml",
+  "x-operator": "institution",
+  "x-provenance-note": "Provenance stamp added by the API Evangelist university pipeline. This artifact was produced by API Evangelist from Uppsala University's own UCDP OpenAPI description; it was NOT published by Uppsala University.",
   "@type": "University",
   "name": "Uppsala University",
   "url": "https://www.uu.se/",

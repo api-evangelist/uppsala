@@ -4,7 +4,9 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Uppsala University
 providerId: uppsala
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
+generated: '2026-08-30'
+method: searched
 reconciled: false
 tags:
 - Education
@@ -12,22 +14,31 @@ tags:
 - University
 - Plans
 description: >-
-  Uppsala University is a non-commercial higher-education institution; its APIs are not sold
-  as a commercial product. Public APIs (library, repository, course, and open-metadata
-  interfaces) are offered free of charge, typically for non-commercial use. Most
-  administrative and identity APIs are not openly self-service and require institutional
-  affiliation, credentials, or federation membership rather than a paid plan.
+  Uppsala University is a public, non-commercial higher-education institution and none of its APIs
+  are sold. Every surface verified on 2026-08-30 is free of charge: the UCDP Public API is free but
+  token-gated (a free token is issued after the maintainers review a stated research use, in 3-5
+  working days, and carries a 5,000 requests/day quota); the Norse World REST-API and the DiVA
+  OAI-PMH endpoint are free and open with no key at all. Identity federation via the SWAMID-
+  registered Shibboleth IdP is gated by institutional affiliation rather than payment. No paid tier,
+  per-seat price or per-call price exists on any Uppsala surface.
 notes: >-
-  No published per-seat or per-call commercial pricing. "Free / Open" reflects open
-  public endpoints; "Affiliation / Credentialed" reflects access gated by institutional
-  identity rather than payment.
+  No published per-seat or per-call commercial pricing was found. "Free / Open" reflects the
+  anonymous public endpoints (Norse World, DiVA OAI-PMH); "Free / Token-Reviewed" reflects UCDP,
+  where the gate is editorial review rather than money; "Affiliation / Credentialed" reflects access
+  gated by institutional identity. Uppsala publishes no course-catalog or open-data API, so no plan
+  is claimed for one.
 sources:
+- https://ucdp.uu.se/apidocs/
+- https://www.uu.se/en/research/norseworld/infrastructure/rest-api
+- https://uu.diva-portal.org/dice/oai?verb=Identify
 - https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/apis.yml
 plans:
 - id: uppsala-free-open
   name: Free / Open
   type: free
-  description: Public open APIs (metadata, library, repository, course data) offered at no charge, generally for non-commercial use.
+  description: >-
+    Anonymous public endpoints offered at no charge and with no key — the Norse World REST-API
+    (JSON / GeoJSON / JSON-LD) and the DiVA OAI-PMH metadata harvesting endpoint.
   entries:
   - label: Open API Access
     name: open_api_access
@@ -35,6 +46,24 @@ plans:
     metric: requests
     limit: -1
     timeFrame: usage
+    geo: global
+    unit: 1
+    price: '0.00'
+    userMultiplied: false
+- id: uppsala-free-token-reviewed
+  name: Free / Token-Reviewed
+  type: free
+  description: >-
+    The UCDP Public API. Free of charge, but access requires a token issued by the UCDP maintainers
+    after review of a stated research purpose, sent in the x-ucdp-access-token header. Quota 5,000
+    requests per day; errors count towards it.
+  entries:
+  - label: UCDP Access Token
+    name: ucdp_access_token
+    type: free
+    metric: requests
+    limit: 5000
+    timeFrame: day
     geo: global
     unit: 1
     price: '0.00'
