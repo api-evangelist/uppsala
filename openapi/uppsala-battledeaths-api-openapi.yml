@@ -79,34 +79,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    BattleDeathsDbAPIResponse:
-      type: object
-      properties:
-        TotalCount:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        TotalPages:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        PreviousPageUrl:
-          type:
-          - string
-          - 'null'
-        NextPageUrl:
-          type:
-          - string
-          - 'null'
-        Result:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/BattleDeathsDb'
-      additionalProperties: false
     BattleDeathsDb:
       type: object
       properties:
@@ -210,6 +182,34 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    BattleDeathsDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalPages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreviousPageUrl:
+          type:
+          - string
+          - 'null'
+        NextPageUrl:
+          type:
+          - string
+          - 'null'
+        Result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BattleDeathsDb'
       additionalProperties: false
   securitySchemes:
     ApiToken:

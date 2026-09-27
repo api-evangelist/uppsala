@@ -95,6 +95,34 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    OrganizedViolenceCYDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalPages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreviousPageUrl:
+          type:
+          - string
+          - 'null'
+        NextPageUrl:
+          type:
+          - string
+          - 'null'
+        Result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OrganizedViolenceCYDb'
+      additionalProperties: false
     OrganizedViolenceCYDb:
       type: object
       properties:
@@ -454,34 +482,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    OrganizedViolenceCYDbAPIResponse:
-      type: object
-      properties:
-        TotalCount:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        TotalPages:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        PreviousPageUrl:
-          type:
-          - string
-          - 'null'
-        NextPageUrl:
-          type:
-          - string
-          - 'null'
-        Result:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OrganizedViolenceCYDb'
       additionalProperties: false
   securitySchemes:
     ApiToken:
