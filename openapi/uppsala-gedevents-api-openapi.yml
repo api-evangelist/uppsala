@@ -87,6 +87,34 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    GedDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalPages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreviousPageUrl:
+          type:
+          - string
+          - 'null'
+        NextPageUrl:
+          type:
+          - string
+          - 'null'
+        Result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GedDb'
+      additionalProperties: false
     GedDb:
       type: object
       properties:
@@ -310,34 +338,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    GedDbAPIResponse:
-      type: object
-      properties:
-        TotalCount:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        TotalPages:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        PreviousPageUrl:
-          type:
-          - string
-          - 'null'
-        NextPageUrl:
-          type:
-          - string
-          - 'null'
-        Result:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/GedDb'
       additionalProperties: false
   securitySchemes:
     ApiToken:
