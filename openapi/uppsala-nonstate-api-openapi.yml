@@ -71,34 +71,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    NonStateDbAPIResponse:
-      type: object
-      properties:
-        TotalCount:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        TotalPages:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        PreviousPageUrl:
-          type:
-          - string
-          - 'null'
-        NextPageUrl:
-          type:
-          - string
-          - 'null'
-        Result:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/NonStateDb'
-      additionalProperties: false
     NonStateDb:
       type: object
       properties:
@@ -230,6 +202,34 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    NonStateDbAPIResponse:
+      type: object
+      properties:
+        TotalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalPages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreviousPageUrl:
+          type:
+          - string
+          - 'null'
+        NextPageUrl:
+          type:
+          - string
+          - 'null'
+        Result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/NonStateDb'
       additionalProperties: false
   securitySchemes:
     ApiToken:
