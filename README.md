@@ -1,4 +1,4 @@
-# Uppsala University (uppsala)
+# Uppsala University
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,53 +64,180 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Uppsala University (Uppsala universitet) is Sweden's oldest university, founded in 1477, and is ranked #103 in the QS World University Rankings 2025. This repository catalogs the university's public developer and API footprint as an [APIs.json](https://apisjson.org) provider profile. Uppsala has no single central developer portal; its public APIs are research-infrastructure driven and decentralized across departments and library systems.
+Uppsala University (Uppsala universitet) is Sweden's oldest university, founded in 1477, and a public research university ranked #103 in the QS World University Rankings 2025. It operates no central developer portal and no institution-wide open-data portal — data.uu.se, opendata.uu.se and api.uu.se do not resolve — so its programmable footprint is decentralized, sitting inside individual research infrastructures, the university library, and IT services. Four surfaces were verified live as institution-operated: the Uppsala Conflict Data Program (UCDP) REST API at ucdpapi.pcr.uu.se, which is the university's most substantial public API and requires a free token; the Norse World REST-API at norseworld.nordiska.uu.se, returning JSON, GeoJSON and JSON-LD; the DiVA OAI-PMH endpoint at uu.diva-portal.org, notable because Uppsala University Library builds and hosts the DiVA platform for the whole Swedish DiVA consortium rather than renting it from a vendor; and the university's SWAMID-registered Shibboleth SAML 2.0 identity provider at weblogin.uu.se, which publishes machine-readable federation metadata. No Figshare, Elsevier Pure, Ex Libris or Dataverse contract is attributed to Uppsala in this profile.
 
-APIs.json: https://raw.githubusercontent.com/api-evangelist/uppsala/refs/heads/main/apis.yml
+**Areas:** University · Higher Education · Education · Sweden · Public Research University · Research Data · Institutional Repository · Identity Federation · Research Computing · Conflict Data · Open Access
 
-Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=uppsala-api-evangelist&utm_content=repo
+## Uppsala University on APIs.io
 
-## Type
+Everything profiled for Uppsala University is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/uppsala/](https://apis.io/providers/uppsala/)** — or go straight to one of the APIs or properties below.
 
-- Index / Consumer / 3rd-Party
+### APIs (10)
 
-## Tags
+- [Norse World REST-API](https://apis.io/apis/uppsala/norseworld/) — The Norse World REST-API, part of the Norse World research infrastructure at Uppsala University's Department of Scandinavian Languages, provides access to…
+- [DiVA OAI-PMH](https://apis.io/apis/uppsala/diva-oai/) — DiVA (Academic Archive On-line) is Uppsala University Library's institutional repository for publications and research data produced by the university's…
+- [Uppsala University SAML 2.0 Identity Provider Metadata](https://apis.io/apis/uppsala/idp-saml/) — Uppsala University runs its own Shibboleth Identity Provider and publishes its SAML 2.0 federation metadata as a machine-readable EntityDescriptor. It is…
+- [Uppsala University BattleDeaths API](https://apis.io/apis/uppsala/uppsala-battledeaths-api/) — The BattleDeaths API from Uppsala University — 1 operation(s) for battledeaths.
+- [Uppsala University Dyadic API](https://apis.io/apis/uppsala/uppsala-dyadic-api/) — The Dyadic API from Uppsala University — 1 operation(s) for dyadic.
+- [Uppsala University GEDEvents API](https://apis.io/apis/uppsala/uppsala-gedevents-api/) — The GEDEvents API from Uppsala University — 1 operation(s) for gedevents.
+- [Uppsala University NonState API](https://apis.io/apis/uppsala/uppsala-nonstate-api/) — The NonState API from Uppsala University — 1 operation(s) for nonstate.
+- [Uppsala University OneSided API](https://apis.io/apis/uppsala/uppsala-onesided-api/) — The OneSided API from Uppsala University — 1 operation(s) for onesided.
+- [Uppsala University OrganizedViolenceCY API](https://apis.io/apis/uppsala/uppsala-organizedviolencecy-api/) — The OrganizedViolenceCY API from Uppsala University — 1 operation(s) for organizedviolencecy.
+- [Uppsala University UcdpPrioConflict API](https://apis.io/apis/uppsala/uppsala-ucdpprioconflict-api/) — The UcdpPrioConflict API from Uppsala University — 1 operation(s) for ucdpprioconflict.
 
-- Education
-- Higher Education
-- University
-- Research
-- Open Data
-- Sweden
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **UCDP API** — Uppsala Conflict Data Program RESTful API (JSON) for conflict datasets; free access token required. Docs: https://ucdp.uu.se/apidocs/ — base `https://ucdpapi.pcr.uu.se/api/`
-- **Norse World REST-API** — Attestation and location records of foreign place names in medieval Nordic texts; JSON, GeoJSON, JSON-LD. Docs: https://www.uu.se/en/research/norseworld/infrastructure/rest-api — base `https://norseworld.nordiska.uu.se/shared/`
-- **DiVA OAI-PMH** — Institutional repository OAI-PMH 2.0 metadata harvesting endpoint. Docs: https://www.uu.se/en/library/publish/diva — base `https://uu.diva-portal.org/dice/oai`
+#### Agentic access (1)
 
-## Plans / Rate Limits / FinOps
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Plans: [plans/uppsala-plans-pricing.yml](plans/uppsala-plans-pricing.yml)
-- Rate Limits: [rate-limits/uppsala-rate-limits.yml](rate-limits/uppsala-rate-limits.yml)
-- FinOps: [finops/uppsala-finops.yml](finops/uppsala-finops.yml)
+- [Uppsala Agentic Access](https://apis.io/agentic-access/uppsala/uppsala-agentic-access/)
 
-## Timestamps
+#### JSON Schema (4)
 
-- Created: 2026-06-03
-- Modified: 2026-06-03
+The data models the API reads and writes.
 
-## Common Properties
+- [UcdpApiResponse](https://apis.io/schemas/uppsala/uppsala-apiresponse/)
+- [GedDb](https://apis.io/schemas/uppsala/uppsala-gedevent/)
+- [OrganizedViolenceCYDb](https://apis.io/schemas/uppsala/uppsala-organizedviolencecy/)
+- [UcdpPrioConflictDb](https://apis.io/schemas/uppsala/uppsala-ucdpprioconflict/)
 
-- Website: https://www.uu.se/
-- GitHub: https://github.com/uppsala-university
-- LinkedIn: https://www.linkedin.com/school/uppsala-university/
-- Review: [review.yml](review.yml)
+#### JSON Structure (2)
 
-## Notes
+Data models expressed in JSON Structure.
 
-All cataloged APIs and properties were verified against live URLs on 2026-06-03. The UCDP API endpoint returns HTTP 401 without an access token (expected, token is free on request). The Norse World REST-API and DiVA OAI-PMH endpoints returned HTTP 200. No endpoints, sign-up flows, or properties were fabricated. The LinkedIn page returns HTTP 999 (standard LinkedIn bot block) but the page exists.
+- [Uppsala Gedevent Structure](https://apis.io/json-structure/uppsala/uppsala-gedevent-structure/)
+- [Uppsala Ucdpprioconflict Structure](https://apis.io/json-structure/uppsala/uppsala-ucdpprioconflict-structure/)
 
-## Maintainers
+#### JSON-LD (1)
 
-- Kin Lane — kin@apievangelist.com
+Linked-data contexts for the provider's vocabulary.
+
+- [Uppsala Context](https://apis.io/jsonld/uppsala/uppsala-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Uppsala UCDP Conflict Data Vocabulary](https://apis.io/vocabularies/uppsala/uppsala-vocabulary/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Uppsala Gedevents Example](https://apis.io/examples/uppsala/uppsala-gedevents-example/)
+- [Uppsala Ucdpprioconflict Example](https://apis.io/examples/uppsala/uppsala-ucdpprioconflict-example/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [UCDP - The Public BattleDeaths API](https://apis.io/collections/uppsala/open-uppsala-battledeaths-api/)
+- [UCDP - The Public BattleDeaths Dyadic API](https://apis.io/collections/uppsala/open-uppsala-dyadic-api/)
+- [UCDP - The Public BattleDeaths GEDEvents API](https://apis.io/collections/uppsala/open-uppsala-gedevents-api/)
+- [UCDP - The Public BattleDeaths NonState API](https://apis.io/collections/uppsala/open-uppsala-nonstate-api/)
+- [UCDP - The Public BattleDeaths OneSided API](https://apis.io/collections/uppsala/open-uppsala-onesided-api/)
+- [UCDP - The Public BattleDeaths OrganizedViolenceCY API](https://apis.io/collections/uppsala/open-uppsala-organizedviolencecy-api/)
+- [UCDP - The Public BattleDeaths UcdpPrioConflict API](https://apis.io/collections/uppsala/open-uppsala-ucdpprioconflict-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Uppsala University — jsonschema rules](https://apis.io/rules/uppsala/uppsala-jsonschema-spectral-rules/)
+- [Uppsala University API Rules](https://apis.io/rules/uppsala/uppsala-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Uppsala Authentication](https://apis.io/security/uppsala/uppsala-authentication/)
+- [Uppsala Domain Security](https://apis.io/security/uppsala/uppsala-domain-security/)
+- [Uppsala Vulnerability Disclosure](https://apis.io/security/uppsala/uppsala-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Uppsala Plans Pricing](https://apis.io/plans/uppsala/uppsala-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Uppsala Rate Limits](https://apis.io/rate-limits/uppsala/uppsala-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Uppsala Finops](https://apis.io/finops/uppsala/uppsala-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.uu.se/)
+- [Documentation](https://ucdp.uu.se/apidocs/)
+- [API reference](https://ucdp.uu.se/apidocs/)
+- [Support](https://www.uu.se/en/contact-and-organisation)
+- [Blog](https://www.uu.se/en/news)
+- [Privacy policy](https://www.uu.se/en/about-uu/data-protection-policy)
+- [GitHub](https://github.com/UppsalaConflictDataProgram)
+
+## API Evangelist rating
+
+**Kin Score 49.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.2 |
+| Contract governance | 35.6 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 42.1 |
+
+**Agent readiness 24.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 34.3** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/uppsala/](https://apis.io/providers/uppsala/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Uppsala University: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/uppsala/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
